@@ -316,11 +316,11 @@ function terminer(succes) {
       <h2>${succes ? 'Bravo !' : 'Raté pour aujourd\'hui'}</h2>
       <p>${succes ? `Diagnostic trouvé en ${essaiActuel + 1} essai${essaiActuel > 0 ? 's' : ''}.` : `Le diagnostic était : <strong>${CAS.diagnostic}</strong>`}</p>
       <button class="btn-partager" id="btn-partager">Partager mon résultat</button>
-      <div class="share-text" id="share-text" style="display:none;">Diagnostdle — ${getDateLabel()}<br>${emoji}<br>Copié !</div>
+      <div class="share-text" id="share-text" style="display:none;">Diagnostick — ${getDateLabel()}<br>${emoji}<br>Copié !</div>
     </div>
   `;
   document.getElementById('btn-partager').addEventListener('click', () => {
-    const txt = `Diagnostdle — ${getDateLabel()}\n${emoji}\nhttps://diagnostdle.fr`;
+    const txt = `Diagnostick — ${getDateLabel()}\n${emoji}\nhttps://syssans.github.io/Diagnostick/`;
     navigator.clipboard.writeText(txt).catch(()=>{});
     document.getElementById('share-text').style.display = 'block';
   });
