@@ -256,22 +256,26 @@
   // ── RENDU LISTE ──────────────────────────────────────────────────────────
   function renderArchives() {
     const container = document.getElementById('archive-list-container');
-    const todayIndex = getTodayIndex();
 
     if (!ALL_DATA.length) {
       container.innerHTML = '<div class="empty-state">Aucun cas disponible pour le moment.</div>';
       return;
     }
 
+    const offset = joursDepuis(CONFIG.start_date);
+    const todayIndex = (CONFIG.start_index + offset) % ALL_DATA.length;
+
+    // Nombre de jours écoulés depuis le lancement = nombre de cas joués
+    // On liste uniquement les cas joués AVANT aujourd'hui, dans l'ordre chronologique
     const passes = [];
-    for (let i = 0; i < ALL_DATA.length; i++) {
-      if (i === todayIndex) continue;
-      const date = getDateForIndex(i);
-      if (date < new Date()) {
-        passes.push({ index: i, date, cas: transformerCas(ALL_DATA[i]) });
-      }
+    for (let jour = 0; jour < offset; jour++) {
+      const index = (CONFIG.start_index + jour) % ALL_DATA.length;
+      const date = new Date(CONFIG.start_date);
+      date.setDate(date.getDate() + jour);
+      passes.push({ index, date, cas: transformerCas(ALL_DATA[index]) });
     }
 
+    // Plus récent en premier
     passes.sort((a, b) => b.date - a.date);
 
     if (!passes.length) {
