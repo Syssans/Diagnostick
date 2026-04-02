@@ -34,7 +34,9 @@
       --red: #a32d2d;
       --red-light: #f7c1c1;
       --red-bg: rgba(96, 42, 40, 0.4);
-      --neutral-bg: rgba(38, 38, 36, 0.8);
+      --neutral-bg: #5c461b;
+      --neutral-light:#d1a041;
+      --yellow: #ffd000;
     }
     @media (prefers-color-scheme: light) {
       :root {
@@ -61,16 +63,17 @@
         --red: #791f1f;
         --red-light: #a32d2d;
         --red-bg: #fcebeb;
-        --neutral-bg: #f5f4ed;
+        --neutral-bg: #faeeda;
+        --neutral-light:#633806;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
-    #app { max-width: 620px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+    #app { max-width: 800px; margin: 0 auto; padding: 2rem 1rem 3rem; }
 
     .header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--border-subtle); }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-    .header-sub { font-size: 13px; color: var(--text-tertiary); margin-top: 5px; }
+    .header h1 { font-size: 40px; font-weight: 700; text-transform: uppercase; }
+    .header-sub { font-size: 20px; color: var(--text-secondary); margin-top: 10px; }
     .header-nav { margin-top: 10px; }
     .header-nav a { font-size: 12px; color: var(--text-tertiary); text-decoration: none; border: 0.5px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px 10px; transition: all 0.1s; }
     .header-nav a:hover { color: var(--text-secondary); border-color: var(--border-mid); }
@@ -84,6 +87,7 @@
     .try-dot.used { background: var(--red-bg); border-color: var(--red); color: var(--red-light); }
     .try-dot.current { border-color: var(--border-strong); background: var(--bg-tertiary); color: var(--text-primary); }
     .try-dot.correct { background: var(--green-bg); border-color: var(--green); color: var(--green-light); }
+    .try-dot.indice { background: var(--neutral-bg); border-color: var(--yellow); color: var(--neutral-light); }
 
     .indices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.25rem; }
     .indice-card { background: var(--bg-secondary); border: 0.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 0.9rem 1.1rem; animation: fadeSlide 0.2s ease; }
@@ -95,7 +99,7 @@
     .tag-paraclinique { background: var(--tag-paraclinique-bg); color: var(--tag-paraclinique-text); }
     .tag-image { background: var(--tag-image-bg); color: var(--tag-image-text); }
     .indice-num { font-size: 11px; color: var(--text-tertiary); }
-    .indice-text { font-size: 14px; line-height: 1.65; }
+    .indice-text { font-size: 1.1rem; line-height: 1.65; font-weight: 600; }
     .indice-image { width: 100%; border-radius: var(--radius-md); margin-top: 10px; background: var(--bg-tertiary); height: 180px; display: flex; align-items: center; justify-content: center; border: 0.5px solid var(--border-subtle); }
     .indice-image img { max-width: 100%; max-height: 100%; border-radius: var(--radius-md); object-fit: contain; }
     .indice-image span { font-size: 12px; color: var(--text-tertiary); }
@@ -151,7 +155,7 @@
 <div id="app">
   <div class="header">
     <h1>Diagnostick</h1>
-    <p class="header-sub">Trouvez le diagnostic en 6 indices — <span id="date-label"></span></p>
+    <p class="header-sub"><span id="date-label"></span></p>
     <div class="header-nav">
       <a href="./archives.html">Archives</a>
     </div>
@@ -178,8 +182,8 @@
   </div>
 
   <div class="footer">
-    <p>Diagnostick est un service de divertissement inspiré de <a href="https://doctordle.org" target="_blank">Doctordle.org</a>.<br>Il ne se substitue en aucun cas à un avis médical professionnel.</p>
-    <p style="margin-top: 6px;"><a href="https://github.com/syssans" target="_blank">@Syssans</a></p>
+    <p><i>Diagnostick ne se substitue en aucun cas à un avis médical professionnel.</i></p>
+    <p style="margin-top: 6px;"><a href="https://x.com/syssans" target="_blank">@Syssans</a></p>
   </div>
 </div>
 
@@ -197,11 +201,9 @@
   let countdownInterval = null;
   const MAX_ESSAIS = 6;
 
-  // ── CLÉS LOCALSTORAGE ────────────────────────────────────────────────────
   const KEY_STATS   = 'diagnostick_stats';
   const KEY_SESSION = 'diagnostick_session';
 
-  // ── DATE ─────────────────────────────────────────────────────────────────
   function getTodayKey() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -225,7 +227,6 @@
     return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
   }
 
-  // ── STATS ────────────────────────────────────────────────────────────────
   function getStats() {
     try { return JSON.parse(localStorage.getItem(KEY_STATS)) || { joues:0, reussis:0, streak:0, lastDate:null }; }
     catch { return { joues:0, reussis:0, streak:0, lastDate:null }; }
@@ -258,7 +259,6 @@
     document.getElementById('stat-streak').textContent = s.streak;
   }
 
-  // ── SESSION DU JOUR ──────────────────────────────────────────────────────
   function getSession() {
     try { return JSON.parse(localStorage.getItem(KEY_SESSION)) || null; }
     catch { return null; }
@@ -268,7 +268,6 @@
     try { localStorage.setItem(KEY_SESSION, JSON.stringify({ date: getTodayKey(), ...data })); } catch {}
   }
 
-  // ── CAS DU JOUR ──────────────────────────────────────────────────────────
   function joursDepuis(dateStr) {
     const start = new Date(dateStr);
     start.setHours(0, 0, 0, 0);
@@ -284,7 +283,6 @@
   }
 
   async function chargerCas() {
-    try {
       const [resData, resConfig] = await Promise.all([
         fetch('./diagnostick_database.json'),
         fetch('./config.json')
@@ -294,9 +292,7 @@
       DIAGNOSTICS = [...new Set([...DIAGNOSTICS, ...data.map(c => c.diagnostic)])];
       const { cas } = getCasDuJour(data, config);
       CAS = transformerCas(cas);
-    } catch {
-      CAS = getCasDemo();
-    }
+
 
     const session = getSession();
     if (session && session.date === getTodayKey()) {
@@ -320,21 +316,8 @@
     };
   }
 
-  function getCasDemo() {
-    return {
-      diagnostic: "Rétrécissement aortique serré",
-      indices: [
-        { type:"anamnese", text:"Homme de 79 ans, hypertendu. Adressé pour dyspnée d'effort progressive (stade III NYHA) depuis 4 mois, avec épisodes de lipothymies à l'effort.", hasImage:false, imageSrc:null },
-        { type:"anamnese", text:"Il rapporte un épisode d'angor à l'effort la semaine précédente. Pas d'antécédent cardiaque connu.", hasImage:false, imageSrc:null },
-        { type:"clinique", text:"Souffle systolique éjectionnel 4/6 irradiant aux carotides, maximum au foyer aortique. Abolition du B2. Pouls parvus et tardus. Frémissement.", hasImage:false, imageSrc:null },
-        { type:"paraclinique", text:"ECG : hypertrophie ventriculaire gauche (Sokolow > 35 mm). Radio thoracique : cardiomégalie, calcifications aortiques.", hasImage:false, imageSrc:null },
-        { type:"image", text:"Échocardiographie Doppler transthoracique :", hasImage:true, imageSrc:null },
-        { type:"paraclinique", text:"ETT : surface aortique 0,7 cm², gradient moyen 52 mmHg, Vmax 4,8 m/s. FEVG 62%.", hasImage:false, imageSrc:null }
-      ]
-    };
-  }
 
-  // ── ÉCRAN DÉJÀ JOUÉ ──────────────────────────────────────────────────────
+//déjà joué
   function afficherDejaJoue(session) {
     document.getElementById('tries-row').style.display = 'none';
     document.getElementById('indices-container').style.display = 'none';
@@ -344,7 +327,7 @@
     const zone = document.getElementById('result-zone');
     zone.innerHTML = `
       <div class="deja-joue">
-        <h2>${session.succes ? 'Bravo !' : 'Raté hier'}</h2>
+        <h2>${session.succes ? 'Bravo !' : 'Raté'}</h2>
         <div class="result-emoji" style="margin: 10px 0;">${emoji}</div>
         <p>${session.succes
           ? `Diagnostic trouvé en ${session.essais} essai${session.essais > 1 ? 's' : ''} — <strong>${session.diagnostic}</strong>`
@@ -382,7 +365,9 @@
     countdownInterval = setInterval(tick, 1000);
   }
 
-  // ── RENDU JEU ────────────────────────────────────────────────────────────
+
+
+
   function renderTries() {
     const row = document.getElementById('tries-row');
     row.innerHTML = '';
@@ -425,13 +410,13 @@
       } else {
         const locked = document.createElement('div');
         locked.className = 'indice-locked-card';
-        locked.innerHTML = `<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg><span class="indice-locked-text">Indice ${i+1} — validez ou passez pour déverrouiller</span>`;
+        locked.innerHTML = `<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg><span class="indice-locked-text">Indice ${i+1}</span>`;
         container.appendChild(locked);
       }
     });
   }
 
-  // ── AUTOCOMPLETE ─────────────────────────────────────────────────────────
+// autocomplete et liste
   function normalise(str) {
     return str.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
   }
@@ -454,10 +439,10 @@
     dd.style.display = 'block';
   }
 
-  // ── LOGIQUE ───────────────────────────────────────────────────────────────
+
   function buildEmoji(succes) {
     return Array.from({length:MAX_ESSAIS}, (_,i) =>
-      i < essaiActuel ? '🟥' : (i === essaiActuel && succes ? '🟩' : '⬜')
+      i < essaiActuel ? '❌' : (i === essaiActuel && succes ? '✅' : '💡')
     ).join('');
   }
 
@@ -524,7 +509,7 @@
 
   function passer() {
     if (termine) return;
-    document.getElementById('feedback').innerHTML = `<div class="feedback reveal">Essai passé.</div>`;
+    document.getElementById('feedback').innerHTML = `<div class="feedback reveal">Indice suivant</div>`;
     document.getElementById('diag-input').value = '';
     document.getElementById('dropdown').style.display = 'none';
     essaiActuel++;
@@ -533,7 +518,12 @@
     renderTries(); renderIndices();
   }
 
-  // ── INIT ─────────────────────────────────────────────────────────────────
+
+
+
+
+
+
   document.getElementById('date-label').textContent = getDateLabel();
 
   document.getElementById('diag-input').addEventListener('input', e => {

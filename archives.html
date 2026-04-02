@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archives — Diagnostick</title>
+  <title>Archives | Diagnostick</title>
   <style>
     :root {
       --bg-primary: #1a1a18;
@@ -33,7 +33,8 @@
       --red: #a32d2d;
       --red-light: #f7c1c1;
       --red-bg: rgba(96, 42, 40, 0.4);
-      --neutral-bg: rgba(38, 38, 36, 0.8);
+      --neutral-bg: #5c461b;
+      --neutral-light:#d1a041;
     }
     @media (prefers-color-scheme: light) {
       :root {
@@ -52,20 +53,21 @@
         --tag-image-bg: #eeedfe; --tag-image-text: #3c3489;
         --green: #3b6d11; --green-light: #639922; --green-bg: #eaf3de;
         --red: #791f1f; --red-light: #a32d2d; --red-bg: #fcebeb;
-        --neutral-bg: #f5f4ed;
+        --neutral-bg: #faeeda;
+        --neutral-light:#633806;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
-    #app { max-width: 620px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+    #app { max-width: 800px; margin: 0 auto; padding: 2rem 1rem 3rem; }
 
     .header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--border-subtle); }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-    .header-sub { font-size: 13px; color: var(--text-tertiary); margin-top: 5px; }
+    .header h1 { font-size: 40px; font-weight: 700; text-transform: uppercase; }
+    .header-sub { font-size: 20px; color: var(--text-secondary); margin-top: 10px; }
     .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-tertiary); text-decoration: none; border: 0.5px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px 10px; margin-top: 10px; transition: all 0.1s; }
     .back-link:hover { color: var(--text-secondary); border-color: var(--border-mid); }
 
-    /* LISTE */
+    
     .archive-list { display: flex; flex-direction: column; gap: 8px; }
     .archive-item { background: var(--bg-secondary); border: 0.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 0.9rem 1.1rem; cursor: pointer; transition: border-color 0.1s; }
     .archive-item:hover { border-color: var(--border-mid); }
@@ -83,9 +85,9 @@
     .diff-dot.active { background: var(--text-secondary); }
     .archive-played { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; }
 
-    /* MODAL */
+    
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: flex-start; justify-content: center; z-index: 100; padding: 1rem; overflow-y: auto; }
-    .modal { background: var(--bg-primary); border: 0.5px solid var(--border-mid); border-radius: var(--radius-lg); width: 100%; max-width: 600px; margin: auto; padding: 1.5rem; }
+    .modal { background: var(--bg-primary); border: 0.5px solid var(--border-mid); border-radius: var(--radius-lg); width: 100%; max-width: 800px; margin: auto; padding: 1.5rem; }
     .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
     .modal-title { font-size: 16px; font-weight: 600; }
     .modal-close { background: none; border: none; cursor: pointer; font-size: 20px; color: var(--text-tertiary); padding: 0 4px; line-height: 1; }
@@ -102,7 +104,7 @@
     .tag-paraclinique { background: var(--tag-paraclinique-bg); color: var(--tag-paraclinique-text); }
     .tag-image { background: var(--tag-image-bg); color: var(--tag-image-text); }
     .indice-num { font-size: 11px; color: var(--text-tertiary); }
-    .indice-text { font-size: 14px; line-height: 1.65; }
+    .indice-text { font-size: 1.1rem; line-height: 1.65; font-weight: 600; }
     .indice-image { width:100%; border-radius:var(--radius-md); margin-top:10px; background:var(--bg-tertiary); height:180px; display:flex; align-items:center; justify-content:center; border:0.5px solid var(--border-subtle); }
     .indice-image img { max-width:100%; max-height:100%; border-radius:var(--radius-md); object-fit:contain; }
     .indice-image span { font-size:12px; color:var(--text-tertiary); }
@@ -131,7 +133,7 @@
     .feedback { margin-top:8px; padding:8px 12px; border-radius:var(--radius-md); font-size:13px; line-height:1.5; }
     .feedback.wrong { background:var(--red-bg); color:var(--red-light); border:0.5px solid var(--red); }
     .feedback.correct { background:var(--green-bg); color:var(--green-light); border:0.5px solid var(--green); }
-    .feedback.reveal { background:var(--neutral-bg); color:var(--text-secondary); border:0.5px solid var(--border-subtle); }
+    .feedback.reveal { background:var(--neutral-bg); color:var(--neutral-light); border:0.5px solid var(--border-subtle); }
     .result-banner { text-align:center; padding:1.5rem; background:var(--bg-secondary); border-radius:var(--radius-lg); border:0.5px solid var(--border-subtle); margin-top:1rem; }
     .result-banner h2 { font-size:18px; font-weight:700; margin-bottom:6px; }
     .result-banner p { font-size:13px; color:var(--text-secondary); line-height:1.6; }
@@ -144,23 +146,36 @@
     .footer a { color:var(--text-tertiary); text-decoration:none; }
     .footer a:hover { color:var(--text-secondary); }
   </style>
+
+
+
+
+
+
+
+
+
+<!page html>
+
+
 </head>
 <body>
 <div id="app">
   <div class="header">
     <h1>Diagnostick</h1>
     <p class="header-sub">Archives</p>
-    <a class="back-link" href="./index.html">← Cas du jour</a>
+    <a class="back-link" href="./index.html">Cas du jour</a>
   </div>
 
   <div id="archive-list-container"></div>
 
   <div class="footer">
-    <p>Diagnostick — <a href="./index.html">Cas du jour</a></p>
+    <p><i>Diagnostick ne se substitue en aucun cas à un avis médical professionnel.</i></p>
+    <p style="margin-top: 6px;"><a href="https://x.com/syssans" target="_blank">@Syssans</a></p>
   </div>
 </div>
 
-<!-- MODAL JEU -->
+
 <div class="modal-overlay" id="modal-overlay" style="display:none;">
   <div class="modal" id="modal">
     <div class="modal-header">
@@ -183,12 +198,26 @@
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+<!// js >
+
+
+
 <script>
   let ALL_DATA = [];
   let DIAGNOSTICS = [];
   let CONFIG = { start_date: '2026-04-02', start_index: 0 };
 
-  // ── DATE ─────────────────────────────────────────────────────────────────
   function joursDepuis(dateStr) {
     const start = new Date(dateStr);
     start.setHours(0, 0, 0, 0);
@@ -197,20 +226,18 @@
     return Math.floor((today - start) / (1000 * 60 * 60 * 24));
   }
 
-  // Index du cas joué aujourd'hui
+
   function getTodayIndex() {
     const offset = joursDepuis(CONFIG.start_date);
     return (CONFIG.start_index + offset) % ALL_DATA.length;
   }
 
-  // Date à laquelle un index donné a été joué
+
   function getDateForIndex(index) {
     const offset = joursDepuis(CONFIG.start_date);
     const todayIndex = (CONFIG.start_index + offset) % ALL_DATA.length;
 
-    // Combien de jours sépare cet index du cas du jour
     let diff = index - todayIndex;
-    // Si l'index est "derrière" dans le cycle, c'est dans le passé
     if (diff > 0) diff -= ALL_DATA.length;
 
     const d = new Date();
@@ -223,7 +250,10 @@
     return d.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
   }
 
-  // ── CHARGEMENT ───────────────────────────────────────────────────────────
+
+
+
+
   async function charger() {
     try {
       const [resData, resConfig] = await Promise.all([
@@ -253,7 +283,10 @@
     };
   }
 
-  // ── RENDU LISTE ──────────────────────────────────────────────────────────
+
+
+
+
   function renderArchives() {
     const container = document.getElementById('archive-list-container');
 
@@ -266,7 +299,6 @@
     const todayIndex = (CONFIG.start_index + offset) % ALL_DATA.length;
 
     // Nombre de jours écoulés depuis le lancement = nombre de cas joués
-    // On liste uniquement les cas joués AVANT aujourd'hui, dans l'ordre chronologique
     const passes = [];
     for (let jour = 0; jour < offset; jour++) {
       const index = (CONFIG.start_index + jour) % ALL_DATA.length;
@@ -275,7 +307,6 @@
       passes.push({ index, date, cas: transformerCas(ALL_DATA[index]) });
     }
 
-    // Plus récent en premier
     passes.sort((a, b) => b.date - a.date);
 
     if (!passes.length) {
@@ -290,35 +321,28 @@
       const item = document.createElement('div');
       item.className = 'archive-item';
 
-      const spClass = 'sp-' + (cas.specialite || 'cardiologie').replace(/\s+/g, '-');
-      const diffDots = Array.from({length:3}, (_,i) =>
-        `<div class="diff-dot${i < cas.difficulte ? ' active' : ''}"></div>`
-      ).join('');
-
       item.innerHTML = `
         <div class="archive-item-header">
           <span class="archive-date">${formatDate(date)}</span>
-          <span class="archive-specialite ${spClass}">${cas.specialite}</span>
         </div>
-        <div class="archive-diagnostic">${cas.diagnostic}</div>
-        <div class="archive-diff">${diffDots}</div>
+        <div class="archive-diagnostic">Cas #${index}</div>
       `;
 
-      item.addEventListener('click', () => ouvrirModal(cas, date));
+      item.addEventListener('click', () => ouvrirModal(cas, date, index));
       list.appendChild(item);
     });
 
     container.appendChild(list);
   }
 
-  // ── MODAL ────────────────────────────────────────────────────────────────
+  // jeu popup
   let modalState = { cas:null, essais:0, indices:1, termine:false };
 
-  function ouvrirModal(cas, date) {
+  function ouvrirModal(cas, date, index) {
     modalState = { cas, essais:0, indices:1, termine:false };
 
-    document.getElementById('modal-title').textContent = 'Cas du ' + formatDate(date);
-    document.getElementById('modal-date').textContent = cas.specialite + ' · ' + '★'.repeat(cas.difficulte);
+    document.getElementById('modal-title').textContent = 'Cas #' + index;
+    document.getElementById('modal-date').textContent = formatDate(date);
     document.getElementById('modal-overlay').style.display = 'flex';
     document.getElementById('modal-input-zone').style.display = 'block';
     document.getElementById('modal-result').innerHTML = '';
@@ -376,7 +400,7 @@
       } else {
         const locked = document.createElement('div');
         locked.className = 'indice-locked-card';
-        locked.innerHTML = `<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg><span class="indice-locked-text">Indice ${i+1} — validez ou passez pour déverrouiller</span>`;
+        locked.innerHTML = `<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg><span class="indice-locked-text">Indice ${i+1}</span>`;
         container.appendChild(locked);
       }
     });
@@ -406,7 +430,7 @@
 
   function buildEmoji(essais, succes) {
     return Array.from({length:6}, (_,i) =>
-      i < essais ? '🟥' : (i === essais && succes ? '🟩' : '⬜')
+      i < essais ? '❌' : (i === essais && succes ? '✅' : '💡')
     ).join('');
   }
 
@@ -453,7 +477,7 @@
 
   function passerModal() {
     if (modalState.termine) return;
-    document.getElementById('modal-feedback').innerHTML = `<div class="feedback reveal">Essai passé.</div>`;
+    document.getElementById('modal-feedback').innerHTML = `<div class="feedback reveal">Indice suivant</div>`;
     document.getElementById('modal-diag-input').value = '';
     document.getElementById('modal-dropdown').style.display = 'none';
     modalState.essais++;
@@ -462,7 +486,10 @@
     renderModalTries(); renderModalIndices();
   }
 
-  // ── EVENTS ───────────────────────────────────────────────────────────────
+
+
+
+
   document.getElementById('modal-close').addEventListener('click', fermerModal);
   document.getElementById('modal-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('modal-overlay')) fermerModal();
