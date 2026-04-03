@@ -2,651 +2,412 @@
 
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin — Diagnostick</title>
-  <style>
-    :root {
-      --bg: #0f0f0d;
-      --bg2: #181816;
-      --bg3: #222220;
-      --bg4: #2a2a28;
-      --text: #f0efe8;
-      --muted: #888780;
-      --faint: #3a3a38;
-      --accent: #c8b97a;
-      --accent-dim: rgba(200, 185, 122, 0.12);
-      --accent-border: rgba(200, 185, 122, 0.3);
-      --danger: #e05c5c;
-      --danger-dim: rgba(224, 92, 92, 0.12);
-      --success: #6ab04c;
-      --success-dim: rgba(106, 176, 76, 0.12);
-      --radius: 10px;
-      --radius-sm: 6px;
-    }
-
-```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Diagnostick</title>
+<style>
+:root {
+  --bg: #0f0f0d;
+  --bg2: #181816;
+  --bg3: #222220;
+  --text: #f0efe8;
+  --muted: #888780;
+  --faint: #3a3a38;
+  --accent: #c8b97a;
+  --accent-dim: rgba(200,185,122,0.12);
+  --accent-border: rgba(200,185,122,0.3);
+  --danger: #e05c5c;
+  --danger-dim: rgba(224,92,92,0.12);
+  --success: #6ab04c;
+  --success-dim: rgba(106,176,76,0.12);
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-body {
-  font-family: 'Georgia', serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  line-height: 1.6;
-}
+#login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.login-card { width: 100%; max-width: 360px; text-align: center; }
+.login-logo { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(–accent); margin-bottom: 2rem; font-family: system-ui, sans-serif; }
+.login-title { font-size: 22px; font-weight: normal; margin-bottom: 0.4rem; }
+.login-sub { font-size: 13px; color: var(–muted); font-family: system-ui, sans-serif; margin-bottom: 2rem; }
+.login-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; text-align: left; }
+.login-field label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(–muted); font-family: system-ui, sans-serif; }
+.login-field input { background: var(–bg2); border: 1px solid var(–faint); border-radius: 6px; color: var(–text); font-size: 14px; font-family: system-ui, sans-serif; padding: 10px 14px; outline: none; width: 100%; }
+.login-field input:focus { border-color: var(–accent); }
+.btn-login { width: 100%; padding: 12px; background: var(–accent); color: var(–bg); border: none; border-radius: 6px; font-size: 14px; font-weight: 700; font-family: system-ui, sans-serif; cursor: pointer; margin-top: 0.5rem; }
+.login-error { margin-top: 10px; font-size: 13px; color: var(–danger); font-family: system-ui, sans-serif; min-height: 20px; }
 
-/* ── LOGIN ── */
-#login-screen {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.login-card {
-  width: 100%;
-  max-width: 360px;
-  text-align: center;
-}
-
-.login-logo {
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 2rem;
-}
-
-.login-title {
-  font-size: 22px;
-  font-weight: normal;
-  margin-bottom: 0.4rem;
-  color: var(--text);
-}
-
-.login-sub {
-  font-size: 13px;
-  color: var(--muted);
-  font-family: system-ui, sans-serif;
-  margin-bottom: 2rem;
-}
-
-.login-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.login-field label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  font-family: system-ui, sans-serif;
-}
-
-.login-field input {
-  background: var(--bg2);
-  border: 0.5px solid var(--faint);
-  border-radius: var(--radius-sm);
-  color: var(--text);
-  font-size: 14px;
-  font-family: system-ui, sans-serif;
-  padding: 10px 14px;
-  outline: none;
-  transition: border-color 0.15s;
-  width: 100%;
-}
-
-.login-field input:focus { border-color: var(--accent-border); }
-.login-field input::placeholder { color: var(--muted); }
-
-.btn-login {
-  width: 100%;
-  padding: 11px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  font-family: system-ui, sans-serif;
-  cursor: pointer;
-  transition: opacity 0.15s;
-  margin-top: 0.5rem;
-}
-
-.btn-login:hover { opacity: 0.85; }
-
-.login-error {
-  margin-top: 10px;
-  font-size: 13px;
-  color: var(--danger);
-  font-family: system-ui, sans-serif;
-  min-height: 20px;
-}
-
-/* ── ADMIN ── */
 #admin-screen { display: none; }
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-  border-bottom: 0.5px solid var(--faint);
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 10;
-}
-
-.topbar-left { display: flex; align-items: center; gap: 12px; }
-.topbar-logo { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
-.topbar-sep { width: 0.5px; height: 16px; background: var(--faint); }
-.topbar-title { font-size: 14px; color: var(--muted); font-family: system-ui, sans-serif; }
-
-.btn-logout {
-  font-size: 12px;
-  color: var(--muted);
-  background: none;
-  border: 0.5px solid var(--faint);
-  border-radius: var(--radius-sm);
-  padding: 5px 12px;
-  cursor: pointer;
-  font-family: system-ui, sans-serif;
-  transition: all 0.1s;
-}
-.btn-logout:hover { color: var(--text); border-color: var(--muted); }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; border-bottom: 1px solid var(–faint); position: sticky; top: 0; background: var(–bg); z-index: 10; }
+.topbar-logo { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(–accent); font-family: system-ui, sans-serif; }
+.topbar-title { font-size: 14px; color: var(–muted); font-family: system-ui, sans-serif; margin-left: 12px; }
+.btn-logout { font-size: 12px; color: var(–muted); background: none; border: 1px solid var(–faint); border-radius: 6px; padding: 5px 12px; cursor: pointer; font-family: system-ui, sans-serif; }
 
 .main { max-width: 680px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-
-/* SECTION TITRE */
-.section-label {
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-family: system-ui, sans-serif;
-  margin-bottom: 1.25rem;
-}
-
-/* CHAMPS */
+.section-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(–accent); font-family: system-ui, sans-serif; margin-bottom: 1.25rem; }
 .field { margin-bottom: 1.25rem; }
-
-.field label {
-  display: block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  font-family: system-ui, sans-serif;
-  margin-bottom: 6px;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  background: var(--bg2);
-  border: 0.5px solid var(--faint);
-  border-radius: var(--radius-sm);
-  color: var(--text);
-  font-size: 14px;
-  font-family: system-ui, sans-serif;
-  padding: 10px 14px;
-  outline: none;
-  transition: border-color 0.15s;
-  resize: vertical;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus { border-color: var(--accent-border); }
-.field input::placeholder,
-.field textarea::placeholder { color: var(--muted); }
-
-.field select { appearance: none; cursor: pointer; }
+.field label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(–muted); font-family: system-ui, sans-serif; margin-bottom: 6px; }
+.field input, .field select, .field textarea { width: 100%; background: var(–bg2); border: 1px solid var(–faint); border-radius: 6px; color: var(–text); font-size: 14px; font-family: system-ui, sans-serif; padding: 10px 14px; outline: none; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(–accent); }
 .field textarea { min-height: 90px; line-height: 1.6; }
-
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-/* INDICES */
-.indices-section { margin-bottom: 1.5rem; }
-
-.indice-block {
-  background: var(--bg2);
-  border: 0.5px solid var(--faint);
-  border-radius: var(--radius);
-  padding: 1rem;
-  margin-bottom: 10px;
-  position: relative;
-  transition: border-color 0.15s;
-}
-
-.indice-block:focus-within { border-color: var(--accent-border); }
-
-.indice-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.indice-num-badge {
-  font-size: 10px;
-  font-family: system-ui, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 0.5px solid var(--accent-border);
-  border-radius: 99px;
-  padding: 2px 10px;
-}
-
-.btn-remove-indice {
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  padding: 0 4px;
-  transition: color 0.1s;
-}
-.btn-remove-indice:hover { color: var(--danger); }
-
+.indice-block { background: var(–bg2); border: 1px solid var(–faint); border-radius: 10px; padding: 1rem; margin-bottom: 10px; }
+.indice-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.indice-badge { font-size: 10px; font-family: system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(–accent); background: var(–accent-dim); border: 1px solid var(–accent-border); border-radius: 99px; padding: 2px 10px; }
+.btn-remove { background: none; border: none; color: var(–muted); cursor: pointer; font-size: 20px; line-height: 1; padding: 0 4px; font-family: system-ui, sans-serif; }
 .indice-fields { display: flex; flex-direction: column; gap: 10px; }
+.indice-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.subfield { display: flex; flex-direction: column; gap: 6px; }
+.subfield label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(–muted); font-family: system-ui, sans-serif; }
+.subfield input, .subfield select { background: var(–bg2); border: 1px solid var(–faint); border-radius: 6px; color: var(–text); font-size: 14px; font-family: system-ui, sans-serif; padding: 10px 14px; outline: none; width: 100%; }
+.subfield input:focus, .subfield select:focus { border-color: var(–accent); }
+.subfield textarea { background: var(–bg2); border: 1px solid var(–faint); border-radius: 6px; color: var(–text); font-size: 14px; font-family: system-ui, sans-serif; padding: 10px 14px; outline: none; width: 100%; min-height: 80px; resize: vertical; line-height: 1.6; }
+.subfield textarea:focus { border-color: var(–accent); }
 
-.indice-type-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-/* BOUTONS */
-.btn-add-indice {
-  width: 100%;
-  padding: 10px;
-  background: transparent;
-  border: 0.5px dashed var(--faint);
-  border-radius: var(--radius-sm);
-  color: var(--muted);
-  font-size: 13px;
-  font-family: system-ui, sans-serif;
-  cursor: pointer;
-  transition: all 0.15s;
-  margin-bottom: 1.5rem;
-}
-.btn-add-indice:hover { border-color: var(--accent-border); color: var(--accent); }
-
-.divider { border: none; border-top: 0.5px solid var(--faint); margin: 2rem 0; }
-
-.btn-publier {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  font-family: system-ui, sans-serif;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-.btn-publier:hover { opacity: 0.85; }
+.btn-add { width: 100%; padding: 10px; background: transparent; border: 1px dashed var(–faint); border-radius: 6px; color: var(–muted); font-size: 13px; font-family: system-ui, sans-serif; cursor: pointer; margin-bottom: 1.5rem; }
+.divider { border: none; border-top: 1px solid var(–faint); margin: 2rem 0; }
+.btn-publier { width: 100%; padding: 14px; background: var(–accent); color: var(–bg); border: none; border-radius: 6px; font-size: 14px; font-weight: 700; font-family: system-ui, sans-serif; cursor: pointer; }
 .btn-publier:disabled { opacity: 0.4; cursor: not-allowed; }
+.status { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; font-family: system-ui, sans-serif; display: none; }
+.status.ok   { background: var(–success-dim); color: var(–success); border: 1px solid var(–success); display: block; }
+.status.err  { background: var(–danger-dim);  color: var(–danger);  border: 1px solid var(–danger);  display: block; }
+.status.load { background: var(–bg3); color: var(–muted); border: 1px solid var(–faint); display: block; }
+.cas-count { font-size: 12px; color: var(–muted); font-family: system-ui, sans-serif; margin-bottom: 1.5rem; }
+.cas-count b { color: var(–accent); }
+</style>
 
-/* STATUS */
-.status-bar {
-  margin-top: 12px;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-family: system-ui, sans-serif;
-  display: none;
-}
-.status-bar.loading { background: var(--bg3); color: var(--muted); border: 0.5px solid var(--faint); display: block; }
-.status-bar.success { background: var(--success-dim); color: var(--success); border: 0.5px solid var(--success); display: block; }
-.status-bar.error   { background: var(--danger-dim);  color: var(--danger);  border: 0.5px solid var(--danger);  display: block; }
-
-/* COMPTEUR */
-.cas-count {
-  font-size: 12px;
-  color: var(--muted);
-  font-family: system-ui, sans-serif;
-  margin-bottom: 1.5rem;
-}
-.cas-count span { color: var(--accent); font-weight: 600; }
-```
-
-  </style>
 </head>
 <body>
-
-<!-- ── LOGIN ─────────────────────────────────────────────────────────────── -->
 
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">Diagnostick</div>
     <h1 class="login-title">Administration</h1>
-    <p class="login-sub">Accès réservé</p>
-
-```
-<div class="login-field">
-  <label>Token GitHub</label>
-  <input type="password" id="input-token" placeholder="ghp_..." />
-</div>
-
-<button class="btn-login" id="btn-login">Connexion</button>
-<div class="login-error" id="login-error"></div>
-```
-
+    <p class="login-sub">Acces reserve</p>
+    <div class="login-field">
+      <label>Token GitHub</label>
+      <input type="password" id="input-token" placeholder="ghp_...">
+    </div>
+    <button class="btn-login" id="btn-login">Connexion</button>
+    <div class="login-error" id="login-error"></div>
   </div>
 </div>
-
-<!-- ── ADMIN ──────────────────────────────────────────────────────────────── -->
 
 <div id="admin-screen">
   <div class="topbar">
-    <div class="topbar-left">
+    <div style="display:flex;align-items:center">
       <span class="topbar-logo">Diagnostick</span>
-      <div class="topbar-sep"></div>
-      <span class="topbar-title">Nouveau cas</span>
+      <span class="topbar-title">/ Nouveau cas</span>
     </div>
-    <button class="btn-logout" id="btn-logout">Déconnexion</button>
+    <button class="btn-logout" id="btn-logout">Deconnexion</button>
   </div>
-
   <div class="main">
-
-```
-<div class="section-label">Informations générales</div>
-
-<div class="field">
-  <label>Diagnostic (réponse exacte)</label>
-  <input type="text" id="f-diagnostic" placeholder="ex : Embolie pulmonaire" />
-</div>
-
-<div class="field-row">
-  <div class="field">
-    <label>Spécialité</label>
-    <select id="f-specialite">
-      <option value="cardiologie">Cardiologie</option>
-      <option value="urgences">Urgences</option>
-      <option value="pneumologie">Pneumologie</option>
-      <option value="neurologie">Neurologie</option>
-      <option value="medecine-interne">Médecine interne</option>
-      <option value="gastroenterologie">Gastroentérologie</option>
-      <option value="infectiologie">Infectiologie</option>
-      <option value="rhumatologie">Rhumatologie</option>
-      <option value="endocrinologie">Endocrinologie</option>
-      <option value="nephrologie">Néphrologie</option>
-      <option value="hematologie">Hématologie</option>
-      <option value="oncologie">Oncologie</option>
-    </select>
-  </div>
-  <div class="field">
-    <label>Difficulté</label>
-    <select id="f-difficulte">
-      <option value="1">★ Facile</option>
-      <option value="2" selected>★★ Moyen</option>
-      <option value="3">★★★ Difficile</option>
-    </select>
-  </div>
-</div>
-
-<div class="field">
-  <label>Explication post-partie</label>
-  <textarea id="f-explication" placeholder="Résumé des éléments clés du diagnostic, physiopathologie, prise en charge..."></textarea>
-</div>
-
-<hr class="divider" />
-
-<div class="section-label">Indices (6 maximum)</div>
-
-<div class="indices-section" id="indices-container"></div>
-
-<button class="btn-add-indice" id="btn-add-indice">+ Ajouter un indice</button>
-
-<hr class="divider" />
-
-<div class="section-label">Publication</div>
-<div class="cas-count" id="cas-count">Chargement du corpus...</div>
-
-<button class="btn-publier" id="btn-publier">Publier le cas</button>
-<div class="status-bar" id="status-bar"></div>
-```
-
+    <div class="section-label">Informations generales</div>
+    <div class="field">
+      <label>Diagnostic (reponse exacte)</label>
+      <input type="text" id="f-diagnostic" placeholder="ex : Embolie pulmonaire">
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label>Specialite</label>
+        <select id="f-specialite">
+          <option value="cardiologie">Cardiologie</option>
+          <option value="urgences">Urgences</option>
+          <option value="pneumologie">Pneumologie</option>
+          <option value="neurologie">Neurologie</option>
+          <option value="medecine-interne">Medecine interne</option>
+          <option value="gastroenterologie">Gastroenterologie</option>
+          <option value="infectiologie">Infectiologie</option>
+          <option value="rhumatologie">Rhumatologie</option>
+          <option value="endocrinologie">Endocrinologie</option>
+          <option value="nephrologie">Nephrologie</option>
+          <option value="hematologie">Hematologie</option>
+          <option value="oncologie">Oncologie</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Difficulte</label>
+        <select id="f-difficulte">
+          <option value="1">Facile</option>
+          <option value="2" selected>Moyen</option>
+          <option value="3">Difficile</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Explication post-partie</label>
+      <textarea id="f-explication" placeholder="Resume des elements cles du diagnostic..."></textarea>
+    </div>
+    <hr class="divider">
+    <div class="section-label">Indices (6 maximum)</div>
+    <div id="indices-container"></div>
+    <button class="btn-add" id="btn-add-indice">+ Ajouter un indice</button>
+    <hr class="divider">
+    <div class="section-label">Publication</div>
+    <div class="cas-count" id="cas-count">Chargement du corpus...</div>
+    <button class="btn-publier" id="btn-publier">Publier le cas</button>
+    <div class="status" id="status"></div>
   </div>
 </div>
 
 <script>
-  // ── CONFIG ────────────────────────────────────────────────────────────────
-  const REPO_OWNER = 'syssans';
-  const REPO_NAME  = 'Diagnostick';
-  const DB_PATH    = 'diagnostick_database.json';
-  const BRANCH     = 'main';
+var OWNER  = 'syssans';
+var REPO   = 'Diagnostick';
+var FILE   = 'diagnostick_database.json';
+var BRANCH = 'main';
+var token  = '';
+var sha    = '';
+var data   = [];
+var count  = 0;
 
-  let githubToken = '';
-
-  // ── AUTH ──────────────────────────────────────────────────────────────────
-  document.getElementById('btn-login').addEventListener('click', () => {
-    const token = document.getElementById('input-token').value.trim();
-    const err   = document.getElementById('login-error');
-
-    if (!token) { err.textContent = 'Entre ton token GitHub.'; return; }
-
-    githubToken = token;
-    err.textContent = '';
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('admin-screen').style.display = 'block';
-    chargerCorpus();
-    ajouterIndice();
-  });
-
-  document.getElementById('input-token').addEventListener('keydown', e => {
-    if (e.key === 'Enter') document.getElementById('btn-login').click();
-  });
-
-  document.getElementById('btn-logout').addEventListener('click', () => {
-    githubToken = '';
-    document.getElementById('admin-screen').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'flex';
-    document.getElementById('input-token').value = '';
-  });
-
-  // ── CORPUS ────────────────────────────────────────────────────────────────
-  let currentSha = '';
-  let currentData = [];
-
-  async function chargerCorpus() {
-    const el = document.getElementById('cas-count');
-    try {
-      const res = await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}`,
-        { headers: { Authorization: `token ${githubToken}`, Accept: 'application/vnd.github.v3+json' } }
-      );
-      const json = await res.json();
-      currentSha  = json.sha;
-      currentData = JSON.parse(atob(json.content.replace(/\n/g, '')));
-      el.innerHTML = `Corpus actuel : <span>${currentData.length} cas</span> — ce nouveau cas sera le n°${currentData.length + 1}`;
-    } catch {
-      el.textContent = 'Impossible de charger le corpus. Vérifie le token.';
-    }
-  }
-
-  // ── INDICES ───────────────────────────────────────────────────────────────
-  let indiceCount = 0;
-
-  function ajouterIndice() {
-    if (indiceCount >= 6) return;
-    indiceCount++;
-    const n = indiceCount;
-
-    const block = document.createElement('div');
-    block.className = 'indice-block';
-    block.dataset.n = n;
-    block.innerHTML = `
-      <div class="indice-header">
-        <span class="indice-num-badge">Indice ${n}</span>
-        ${n > 1 ? `<button class="btn-remove-indice" data-n="${n}" title="Supprimer">×</button>` : ''}
-      </div>
-      <div class="indice-fields">
-        <div class="indice-type-row">
-          <div class="field" style="margin:0">
-            <label>Type</label>
-            <select id="type-${n}">
-              <option value="anamnese">Anamnèse</option>
-              <option value="clinique">Clinique</option>
-              <option value="paraclinique">Paraclinique</option>
-              <option value="image">Imagerie</option>
-            </select>
-          </div>
-          <div class="field" style="margin:0">
-            <label>Fichier image (optionnel)</label>
-            <input type="text" id="image-${n}" placeholder="ex : cardio-011-ecg.jpg" />
-          </div>
-        </div>
-        <div class="field" style="margin:0">
-          <label>Texte de l'indice</label>
-          <textarea id="texte-${n}" placeholder="Description clinique, résultat, contexte..."></textarea>
-
-```
-    </div>
-  </div>
-`;
-
-block.querySelector('.btn-remove-indice')?.addEventListener('click', () => {
-  block.remove();
-  indiceCount--;
-  reordonnerIndices();
-  document.getElementById('btn-add-indice').style.display = indiceCount >= 6 ? 'none' : 'block';
-});
-
-document.getElementById('indices-container').appendChild(block);
-document.getElementById('btn-add-indice').style.display = indiceCount >= 6 ? 'none' : 'block';
-```
-
-}
-
-function reordonnerIndices() {
-document.querySelectorAll(’.indice-block’).forEach((block, i) => {
-const n = i + 1;
-block.dataset.n = n;
-block.querySelector(’.indice-num-badge’).textContent = `Indice ${n}`;
-block.querySelector(‘select’)?.setAttribute(‘id’, `type-${n}`);
-block.querySelector(‘input[type=text]’)?.setAttribute(‘id’, `image-${n}`);
-block.querySelector(‘textarea’)?.setAttribute(‘id’, `texte-${n}`);
-});
-indiceCount = document.querySelectorAll(’.indice-block’).length;
-}
-
-document.getElementById(‘btn-add-indice’).addEventListener(‘click’, ajouterIndice);
-
-// ── PUBLICATION ───────────────────────────────────────────────────────────
-function genId(specialite, index) {
-const abbr = { cardiologie:‘cardio’, urgences:‘urg’, pneumologie:‘pneumo’,
-neurologie:‘neuro’, ‘medecine-interne’:‘med’, gastroenterologie:‘gastro’,
-infectiologie:‘infect’, rhumatologie:‘rhumato’, endocrinologie:‘endo’,
-nephrologie:‘nephro’, hematologie:‘hemato’, oncologie:‘onco’ };
-const prefix = abbr[specialite] || specialite;
-return `${prefix}-${String(index).padStart(3,'0')}`;
-}
+function el(id) { return document.getElementById(id); }
 
 function setStatus(type, msg) {
-const el = document.getElementById(‘status-bar’);
-el.className = `status-bar ${type}`;
-el.textContent = msg;
+  var s = el('status');
+  s.className = 'status ' + type;
+  s.textContent = msg;
 }
 
-document.getElementById(‘btn-publier’).addEventListener(‘click’, async () => {
-const diagnostic  = document.getElementById(‘f-diagnostic’).value.trim();
-const specialite  = document.getElementById(‘f-specialite’).value;
-const difficulte  = parseInt(document.getElementById(‘f-difficulte’).value);
-const explication = document.getElementById(‘f-explication’).value.trim();
-
-```
-if (!diagnostic) { setStatus('error', 'Le diagnostic est obligatoire.'); return; }
-
-const blocks = document.querySelectorAll('.indice-block');
-if (blocks.length === 0) { setStatus('error', 'Ajoute au moins un indice.'); return; }
-
-const indices = [];
-let valid = true;
-blocks.forEach((block, i) => {
-  const n = i + 1;
-  const texte = document.getElementById(`texte-${n}`)?.value.trim();
-  const type  = document.getElementById(`type-${n}`)?.value;
-  const image = document.getElementById(`image-${n}`)?.value.trim() || null;
-  if (!texte) { setStatus('error', `L'indice ${n} est vide.`); valid = false; }
-  indices.push({ ordre: n, type, texte, image });
+el('btn-login').addEventListener('click', function() {
+  var t = el('input-token').value.trim();
+  if (!t) { el('login-error').textContent = 'Entre ton token GitHub.'; return; }
+  token = t;
+  el('login-error').textContent = '';
+  el('login-screen').style.display = 'none';
+  el('admin-screen').style.display = 'block';
+  charger();
+  ajouterIndice();
 });
 
-if (!valid) return;
+el('input-token').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { el('btn-login').click(); }
+});
 
-const btn = document.getElementById('btn-publier');
-btn.disabled = true;
-setStatus('loading', 'Publication en cours...');
+el('btn-logout').addEventListener('click', function() {
+  token = '';
+  el('admin-screen').style.display = 'none';
+  el('login-screen').style.display = 'flex';
+  el('input-token').value = '';
+});
 
-const newId  = genId(specialite, currentData.length + 1);
-const newCas = { id: newId, specialite, difficulte, diagnostic, indices, explication, references: [] };
-const newData = [...currentData, newCas];
-const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
-
-try {
-  const res = await fetch(
-    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}`,
-    {
-      method: 'PUT',
-      headers: {
-        Authorization: `token ${githubToken}`,
-        Accept: 'application/vnd.github.v3+json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: `Ajout du cas : ${diagnostic}`,
-        content: newContent,
-        sha: currentSha,
-        branch: BRANCH
-      })
+function charger() {
+  var url = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + FILE + '?ref=' + BRANCH;
+  fetch(url, {
+    headers: {
+      'Authorization': 'token ' + token,
+      'Accept': 'application/vnd.github.v3+json'
     }
-  );
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(j) {
+    sha = j.sha;
+    data = JSON.parse(atob(j.content.replace(/\n/g, '')));
+    el('cas-count').innerHTML = 'Corpus : <b>' + data.length + ' cas</b> — ce cas sera le n&deg;' + (data.length + 1);
+  })
+  .catch(function() {
+    el('cas-count').textContent = 'Impossible de charger le corpus. Verifie ton token.';
+  });
+}
 
-  if (!res.ok) {
-    const err = await res.json();
-    throw new Error(err.message || 'Erreur GitHub');
+el('btn-add-indice').addEventListener('click', ajouterIndice);
+
+function ajouterIndice() {
+  if (count >= 6) return;
+  count++;
+  var n = count;
+
+  var block = document.createElement('div');
+  block.className = 'indice-block';
+  block.id = 'indice-' + n;
+
+  var header = document.createElement('div');
+  header.className = 'indice-header';
+
+  var badge = document.createElement('span');
+  badge.className = 'indice-badge';
+  badge.textContent = 'Indice ' + n;
+  header.appendChild(badge);
+
+  if (n > 1) {
+    var btnRm = document.createElement('button');
+    btnRm.className = 'btn-remove';
+    btnRm.textContent = 'x';
+    btnRm.setAttribute('data-n', String(n));
+    btnRm.addEventListener('click', function() {
+      var num = this.getAttribute('data-n');
+      var b = document.getElementById('indice-' + num);
+      if (b) { b.remove(); }
+      count--;
+      el('btn-add-indice').style.display = count >= 6 ? 'none' : 'block';
+    });
+    header.appendChild(btnRm);
   }
 
-  currentData = newData;
-  const newJson = await res.json();
-  currentSha = newJson.content.sha;
+  block.appendChild(header);
 
-  setStatus('success', `Cas "${diagnostic}" publié avec succès — corpus : ${currentData.length} cas.`);
-  document.getElementById('cas-count').innerHTML = `Corpus actuel : <span>${currentData.length} cas</span> — ce nouveau cas sera le n°${currentData.length + 1}`;
-  resetForm();
+  var fields = document.createElement('div');
+  fields.className = 'indice-fields';
 
-} catch (e) {
-  setStatus('error', `Erreur : ${e.message}`);
-} finally {
-  btn.disabled = false;
+  var row = document.createElement('div');
+  row.className = 'indice-row';
+
+  var sf1 = document.createElement('div');
+  sf1.className = 'subfield';
+  var l1 = document.createElement('label');
+  l1.textContent = 'Type';
+  var sel = document.createElement('select');
+  sel.id = 'type-' + n;
+  var types = ['anamnese', 'clinique', 'paraclinique', 'image'];
+  var labels = ['Anamnese', 'Clinique', 'Paraclinique', 'Imagerie'];
+  for (var i = 0; i < types.length; i++) {
+    var o = document.createElement('option');
+    o.value = types[i];
+    o.textContent = labels[i];
+    sel.appendChild(o);
+  }
+  sf1.appendChild(l1);
+  sf1.appendChild(sel);
+
+  var sf2 = document.createElement('div');
+  sf2.className = 'subfield';
+  var l2 = document.createElement('label');
+  l2.textContent = 'Image (optionnel)';
+  var imgInput = document.createElement('input');
+  imgInput.type = 'text';
+  imgInput.id = 'image-' + n;
+  imgInput.placeholder = 'cardio-011-ecg.jpg';
+  sf2.appendChild(l2);
+  sf2.appendChild(imgInput);
+
+  row.appendChild(sf1);
+  row.appendChild(sf2);
+
+  var sf3 = document.createElement('div');
+  sf3.className = 'subfield';
+  var l3 = document.createElement('label');
+  l3.textContent = 'Texte de l\'indice';
+  var ta = document.createElement('textarea');
+  ta.id = 'texte-' + n;
+  ta.placeholder = 'Description, resultat, contexte...';
+  sf3.appendChild(l3);
+  sf3.appendChild(ta);
+
+  fields.appendChild(row);
+  fields.appendChild(sf3);
+  block.appendChild(fields);
+
+  el('indices-container').appendChild(block);
+  el('btn-add-indice').style.display = count >= 6 ? 'none' : 'block';
 }
-```
 
+el('btn-publier').addEventListener('click', function() {
+  var diagnostic  = el('f-diagnostic').value.trim();
+  var specialite  = el('f-specialite').value;
+  var difficulte  = parseInt(el('f-difficulte').value);
+  var explication = el('f-explication').value.trim();
+
+  if (!diagnostic) { setStatus('err', 'Le diagnostic est obligatoire.'); return; }
+
+  var blocks = el('indices-container').querySelectorAll('.indice-block');
+  if (!blocks.length) { setStatus('err', 'Ajoute au moins un indice.'); return; }
+
+  var indices = [];
+  var ok = true;
+  for (var i = 0; i < blocks.length; i++) {
+    var blockId = blocks[i].id.replace('indice-', '');
+    var typeEl  = document.getElementById('type-' + blockId);
+    var imageEl = document.getElementById('image-' + blockId);
+    var texteEl = document.getElementById('texte-' + blockId);
+    if (!texteEl || !texteEl.value.trim()) {
+      setStatus('err', 'Indice ' + (i + 1) + ' est vide.');
+      ok = false;
+      break;
+    }
+    indices.push({
+      ordre: i + 1,
+      type: typeEl ? typeEl.value : 'anamnese',
+      texte: texteEl.value.trim(),
+      image: imageEl && imageEl.value.trim() ? imageEl.value.trim() : null
+    });
+  }
+
+  if (!ok) return;
+
+  var abbr = {
+    cardiologie: 'cardio', urgences: 'urg', pneumologie: 'pneumo',
+    neurologie: 'neuro', 'medecine-interne': 'med', gastroenterologie: 'gastro',
+    infectiologie: 'infect', rhumatologie: 'rhumato', endocrinologie: 'endo',
+    nephrologie: 'nephro', hematologie: 'hemato', oncologie: 'onco'
+  };
+  var prefix = abbr[specialite] || specialite;
+  var num = String(data.length + 1);
+  while (num.length < 3) { num = '0' + num; }
+  var id = prefix + '-' + num;
+
+  var newCas = {
+    id: id,
+    specialite: specialite,
+    difficulte: difficulte,
+    diagnostic: diagnostic,
+    indices: indices,
+    explication: explication,
+    references: []
+  };
+
+  var newData = data.slice();
+  newData.push(newCas);
+
+  var jsonStr = JSON.stringify(newData, null, 2);
+  var content = btoa(unescape(encodeURIComponent(jsonStr)));
+
+  el('btn-publier').disabled = true;
+  setStatus('load', 'Publication en cours...');
+
+  fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + FILE, {
+    method: 'PUT',
+    headers: {
+      'Authorization': 'token ' + token,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: 'Ajout : ' + diagnostic,
+      content: content,
+      sha: sha,
+      branch: BRANCH
+    })
+  })
+  .then(function(r) {
+    if (!r.ok) {
+      return r.json().then(function(e) { throw new Error(e.message || 'Erreur GitHub'); });
+    }
+    return r.json();
+  })
+  .then(function(j) {
+    data = newData;
+    sha = j.content.sha;
+    setStatus('ok', 'Cas publie avec succes. Corpus : ' + data.length + ' cas.');
+    el('cas-count').innerHTML = 'Corpus : <b>' + data.length + ' cas</b> — ce cas sera le n&deg;' + (data.length + 1);
+    reset();
+  })
+  .catch(function(e) {
+    setStatus('err', 'Erreur : ' + e.message);
+  })
+  .finally(function() {
+    el('btn-publier').disabled = false;
+  });
 });
 
-function resetForm() {
-document.getElementById(‘f-diagnostic’).value = ‘’;
-document.getElementById(‘f-explication’).value = ‘’;
-document.getElementById(‘f-specialite’).value = ‘cardiologie’;
-document.getElementById(‘f-difficulte’).value = ‘2’;
-document.getElementById(‘indices-container’).innerHTML = ‘’;
-indiceCount = 0;
-ajouterIndice();
-document.getElementById(‘btn-add-indice’).style.display = ‘block’;
+function reset() {
+  el('f-diagnostic').value = '';
+  el('f-explication').value = '';
+  el('f-specialite').value = 'cardiologie';
+  el('f-difficulte').value = '2';
+  el('indices-container').innerHTML = '';
+  count = 0;
+  ajouterIndice();
+  el('btn-add-indice').style.display = 'block';
+  el('status').className = 'status';
 }
 </script>
 
