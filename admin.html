@@ -121,6 +121,8 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
           <option value="nephrologie">Nephrologie</option>
           <option value="hematologie">Hematologie</option>
           <option value="oncologie">Oncologie</option>
+          <option value="pediatrie">Pédiatrie</option>
+          <option value="gynecologie">Gynécologie</option>                    
         </select>
       </div>
       <div class="field">
@@ -389,7 +391,8 @@ el('btn-publier').addEventListener('click', function() {
     cardiologie: 'cardio', urgences: 'urg', pneumologie: 'pneumo',
     neurologie: 'neuro', 'medecine-interne': 'med', gastroenterologie: 'gastro',
     infectiologie: 'infect', rhumatologie: 'rhumato', endocrinologie: 'endo',
-    nephrologie: 'nephro', hematologie: 'hemato', oncologie: 'onco'
+    nephrologie: 'nephro', hematologie: 'hemato', oncologie: 'onco', pediatrie: 'ped',
+    gynecologie: 'gyn'
   };
   var prefix = abbr[specialite] || specialite;
   var num = String(data.length + 1);
