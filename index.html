@@ -132,6 +132,19 @@
     .footer a { color:var(--text-tertiary); text-decoration:none; }
     .footer a:hover { color:var(--text-secondary); }
   </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
 <div id="app">
@@ -182,6 +195,17 @@
     <p><i>Diagnostick ne se substitue en aucun cas à un avis médical professionnel.</i></p>    <p style="margin-top:6px;"><a href="https://x.com/syssans" target="_blank">@Syssans</a></p>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   var DIAGNOSTICS = [
@@ -430,8 +454,8 @@
   function buildEmoji(succes) {
     var result = '';
     for (var i = 0; i < MAX_ESSAIS; i++) {
-      if (i < essaiActuel) result += '🟥';
-      else if (i === essaiActuel && succes) result += '🟩';
+      if (i < essaiActuel) result += '❌';
+      else if (i === essaiActuel && succes) result += '✅';
       else result += '⬜';
     }
     return result;

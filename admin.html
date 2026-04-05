@@ -81,7 +81,7 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
   <div class="login-card">
     <div class="login-logo">Diagnostick</div>
     <h1 class="login-title">Administration</h1>
-    <p class="login-sub">Acces reserve</p>
+    <p class="login-sub">Accès réservé</p>
     <div class="login-field">
       <label>Token GitHub</label>
       <input type="password" id="input-token" placeholder="ghp_...">
@@ -97,17 +97,17 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
       <span class="topbar-logo">Diagnostick</span>
       <span class="topbar-title">/ Nouveau cas</span>
     </div>
-    <button class="btn-logout" id="btn-logout">Deconnexion</button>
+    <button class="btn-logout" id="btn-logout">Déconnexion</button>
   </div>
   <div class="main">
-    <div class="section-label">Informations generales</div>
+    <div class="section-label">Informations générales</div>
     <div class="field">
-      <label>Diagnostic (reponse exacte)</label>
+      <label>Diagnostic (réponse exacte)</label>
       <input type="text" id="f-diagnostic" placeholder="ex : Embolie pulmonaire">
     </div>
     <div class="field-row">
       <div class="field">
-        <label>Specialite</label>
+        <label>Spécialité</label>
         <select id="f-specialite">
           <option value="cardiologie">Cardiologie</option>
           <option value="urgences">Urgences</option>
@@ -124,7 +124,7 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
         </select>
       </div>
       <div class="field">
-        <label>Difficulte</label>
+        <label>Difficulté</label>
         <select id="f-difficulte">
           <option value="1">Facile</option>
           <option value="2" selected>Moyen</option>
@@ -134,7 +134,7 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
     </div>
     <div class="field">
       <label>Explication post-partie</label>
-      <textarea id="f-explication" placeholder="Resume des elements cles du diagnostic..."></textarea>
+      <textarea id="f-explication" placeholder="Résume des élements clés du diagnostic..."></textarea>
     </div>
     <hr class="divider">
     <div class="section-label">Indices (6 maximum)</div>
@@ -164,7 +164,7 @@ body { font-family: Georgia, serif; background: var(--bg); color: var(--text); m
         <div class="field"><label>FR</label><input type="text" id="c-FR" placeholder="ex : 18/min"></div>
         <div class="field"><label>Temperature</label><input type="text" id="c-Temp" placeholder="ex : 38.2 C"></div>
       </div>
-      <div class="field"><label>Autres (nom : valeur, separes par des virgules)</label><input type="text" id="c-autres" placeholder="ex : Glasgow : 15, Glycemie : 7.2 mmol/L"></div>
+      <div class="field"><label>Autres (nom : valeur, séparés par des virgules)</label><input type="text" id="c-autres" placeholder="ex : Glasgow : 15, Glycemie : 7.2 mmol/L"></div>
     </div>
     <hr class="divider">
     <div class="section-label">Publication</div>
@@ -439,7 +439,7 @@ el('btn-publier').addEventListener('click', function() {
   .then(function(j) {
     data = newData;
     sha = j.content.sha;
-    setStatus('ok', 'Cas publie avec succes. Corpus : ' + data.length + ' cas.');
+    setStatus('ok', 'Cas publié avec succès. Corpus : ' + data.length + ' cas.');
     el('cas-count').innerHTML = 'Corpus : <b>' + data.length + ' cas</b> — ce cas sera le n&deg;' + (data.length + 1);
     reset();
   })

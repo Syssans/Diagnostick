@@ -20,17 +20,17 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "FC 94 bpm, PA 155/90 mmHg, SpO₂ 97% en air ambiant, FR 18/min. Pâleur, sueurs froides. Auscultation cardiaque : B1B2 réguliers, pas de souffle. Auscultation pulmonaire normale. Pas de signe d'insuffisance cardiaque droite.",
+        "texte": "Pâleur, sueurs froides. Auscultation cardiaque : B1B2 réguliers, pas de souffle. Auscultation pulmonaire normale. Pas de signe d'insuffisance cardiaque droite.",
         "image": null
       },
       {
-        "ordre": 4,
+        "ordre": 5,
         "type": "paraclinique",
         "texte": "ECG 12 dérivations en urgence : sus-décalage du segment ST > 2 mm en V1-V4 avec image en miroir en territoire inférieur. Bloc de branche gauche absent au précédent ECG.",
         "image": null
       },
       {
-        "ordre": 5,
+        "ordre": 4,
         "type": "image",
         "texte": "ECG 12 dérivations :",
         "image": "cardio-001-ecg.jpg"
@@ -79,7 +79,7 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "PA droite 175/100 mmHg, PA gauche 140/85 mmHg (asymétrie > 20 mmHg). FC 102 bpm. SpO₂ 96%. Souffle diastolique aortique apparu récemment. Pouls fémoral gauche aboli. Pas de déficit neurologique focal.",
+        "texte": "Souffle diastolique aortique apparu récemment. Pouls fémoral gauche aboli. Pas de déficit neurologique focal.",
         "image": null
       },
       {
@@ -138,17 +138,17 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Pouls irrégulier à 118 bpm, PA 148/88 mmHg, SpO₂ 97%, FR 16/min. Auscultation cardiaque : bruits irréguliers, pas de souffle. Pas de signe d'insuffisance cardiaque. Score CHA₂DS₂-VASc à 4.",
+        "texte": "Pouls irrégulier. Auscultation cardiaque : bruits irréguliers, pas de souffle. Pas de signe d'insuffisance cardiaque. Score CHA₂DS₂-VASc à 4.",
         "image": null
       },
       {
-        "ordre": 4,
+        "ordre": 5,
         "type": "paraclinique",
         "texte": "ECG : absence d'ondes P identifiables, intervalles RR totalement irréguliers, activité atriale anarchique à environ 350-600/min, fréquence ventriculaire moyenne 118 bpm.",
         "image": null
       },
       {
-        "ordre": 5,
+        "ordre": 4,
         "type": "image",
         "texte": "ECG 12 dérivations :",
         "image": "cardio-003-ecg.jpg"
@@ -197,7 +197,7 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "PA 88/70 mmHg, FC 122 bpm, SpO₂ 93%, FR 26/min. Turgescence jugulaire bilatérale. Bruits du cœur assourdis. Pouls paradoxal > 15 mmHg. Pas d'œdème des membres inférieurs. Hépatomégalie douloureuse.",
+        "texte": "Turgescence jugulaire bilatérale. Bruits du cœur assourdis. Pas d'œdème des membres inférieurs. Hépatomégalie douloureuse.",
         "image": null
       },
       {
@@ -256,7 +256,7 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "SpO₂ 84% en air ambiant, FC 108 bpm, PA 165/95 mmHg, FR 32/min. Crépitants bilatéraux jusqu'aux sommets. Galop B3 à l'auscultation. Turgescence jugulaire. Œdèmes des membres inférieurs prenant le godet jusqu'aux genoux.",
+        "texte": "Crépitants bilatéraux jusqu'aux sommets. Galop B3 à l'auscultation. Turgescence jugulaire. Œdèmes des membres inférieurs prenant le godet jusqu'aux genoux.",
         "image": null
       },
       {
@@ -374,17 +374,17 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "FC 82 bpm, PA 122/74 mmHg, SpO₂ 99%, apyrétique. Frottement péricardique mésosystolique et mésodiastolique fugace à l'auscultation en position assise penchée en avant. Pas de signe de tamponnade.",
+        "texte": "Frottement péricardique mésosystolique et mésodiastolique fugace à l'auscultation en position assise penchée en avant. Pas de signe de tamponnade.",
         "image": null
       },
       {
-        "ordre": 4,
+        "ordre": 5,
         "type": "paraclinique",
         "texte": "ECG : sus-décalage diffus du segment ST concave vers le haut (en selle) dans toutes les dérivations sauf aVR et V1, sous-décalage du segment PR. Pas de miroir.",
         "image": null
       },
       {
-        "ordre": 5,
+        "ordre": 4,
         "type": "image",
         "texte": "ECG 12 dérivations :",
         "image": "cardio-007-ecg.jpg"
@@ -433,17 +433,17 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "PA 92/60 mmHg, FC 188 bpm, SpO₂ 94%, FR 22/min. Patient conscient, légèrement obnubilé. Pouls régulier rapide. Auscultation cardiaque : B1B2 réguliers, pas de souffle audible. Crépitants aux bases pulmonaires.",
+        "texte": "Patient conscient, légèrement obnubilé. Pouls régulier rapide. Auscultation cardiaque : B1B2 réguliers, pas de souffle audible. Crépitants aux bases pulmonaires.",
         "image": null
       },
       {
-        "ordre": 4,
+        "ordre": 5,
         "type": "paraclinique",
         "texte": "ECG : tachycardie régulière à complexes larges (QRS > 120 ms) à 188/min, dissociation auriculo-ventriculaire visible, captures et fusions. Axe dévié à gauche.",
         "image": null
       },
       {
-        "ordre": 5,
+        "ordre": 4,
         "type": "image",
         "texte": "ECG 12 dérivations :",
         "image": "cardio-008-ecg.jpg"
@@ -551,17 +551,17 @@
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "FC 38 bpm, PA 100/65 mmHg, SpO₂ 96%, FR 16/min. Patient consciente, légèrement confuse. Pouls lent régulier. Auscultation : bruits du cœur lents, éclat du B1 variable. Pas de signe d'insuffisance cardiaque.",
+        "texte": "Patient consciente, légèrement confuse. Pouls lent régulier. Auscultation : bruits du cœur lents, éclat du B1 variable. Pas de signe d'insuffisance cardiaque.",
         "image": null
       },
       {
-        "ordre": 4,
+        "ordre": 5,
         "type": "paraclinique",
         "texte": "ECG : rythme auriculaire régulier à 88/min (ondes P visibles), rythme ventriculaire régulier à 38/min (QRS fins), aucune relation entre les ondes P et les complexes QRS. Dissociation auriculo-ventriculaire complète.",
         "image": null
       },
       {
-        "ordre": 5,
+        "ordre": 4,
         "type": "image",
         "texte": "ECG 12 dérivations :",
         "image": "cardio-010-ecg.jpg"
