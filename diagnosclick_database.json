@@ -593,15 +593,15 @@
     "id": "gyn-011",
     "specialite": "gynecologie",
     "difficulte": 2,
-    "diagnostic": "Syndrome de stimulation ovarienne",
+    "diagnostic": "Syndrome d'hyperstimulation ovarienne",
     "constantes": {
       "disponible_a_partir_de": 2,
       "valeurs": {
-        "FC": "104",
-        "PA": "123",
-        "SpO2": "87",
-        "FR": "18",
-        "Temperature": "37.1"
+        "FC": "104 bpm",
+        "PA": "123/87 mmHg",
+        "SpO2": "98%",
+        "FR": "18 /min",
+        "Temperature": "37.1°C"
       }
     },
     "indices": [
