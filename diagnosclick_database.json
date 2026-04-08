@@ -8,43 +8,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 58 ans, hypertension artÃ©rielle traitÃ©e, tabagique actif Ã  30 PA, dyslipidÃ©mie connue. Consulte aux urgences pour douleur thoracique rÃ©trosternale en Ã©tau, irradiant dans le bras gauche et la mÃ¢choire, depuis 45 minutes.",
+        "texte": "Homme de 58 ans, hypertension artérielle traitée, tabagique actif à 30 PA, dyslipidémie connue. Consulte aux urgences pour douleur thoracique rétrosternale en étau, irradiant dans le bras gauche et la mâchoire, depuis 45 minutes.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "La douleur est apparue au repos, non soulagÃ©e par la trinitrine sublinguale. Il rapporte des Ã©pisodes similaires mais moins intenses depuis 3 semaines Ã  l'effort, spontanÃ©ment rÃ©solutifs. Pas d'antÃ©cÃ©dent cardiaque connu.",
+        "texte": "La douleur est apparue au repos, non soulagée par la trinitrine sublinguale. Il rapporte des épisodes similaires mais moins intenses depuis 3 semaines à l'effort, spontanément résolutifs. Pas d'antécédent cardiaque connu.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "PÃ¢leur, sueurs froides. Auscultation cardiaque : B1B2 rÃ©guliers, pas de souffle. Auscultation pulmonaire normale. Pas de signe d'insuffisance cardiaque droite.",
+        "texte": "Pâleur, sueurs froides. Auscultation cardiaque : B1B2 réguliers, pas de souffle. Auscultation pulmonaire normale. Pas de signe d'insuffisance cardiaque droite.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "ECG 12 dÃ©rivations en urgence : sus-dÃ©calage du segment ST > 2 mm en V1-V4 avec image en miroir en territoire infÃ©rieur. Bloc de branche gauche absent au prÃ©cÃ©dent ECG.",
+        "texte": "ECG 12 dérivations en urgence : sus-décalage du segment ST > 2 mm en V1-V4 avec image en miroir en territoire inférieur. Bloc de branche gauche absent au précédent ECG.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "image",
-        "texte": "ECG 12 dÃ©rivations :",
+        "texte": "ECG 12 dérivations :",
         "image": "cardio-001-ecg.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "Troponine Ic ultra-sensible : 1 850 ng/L (N < 14). Troponine Ã  H3 : 6 200 ng/L. CrÃ©atinine : 88 Âµmol/L. GlycÃ©mie : 7,2 mmol/L.",
+        "texte": "Troponine Ic ultra-sensible : 1 850 ng/L (N < 14). Troponine à H3 : 6 200 ng/L. Créatinine : 88 µmol/L. Glycémie : 7,2 mmol/L.",
         "image": null
       }
     ],
-    "explication": "Le SCA ST+ est une urgence absolue dÃ©finie par une occlusion coronaire aiguÃ« complÃ¨te. Le diagnostic repose sur la clinique (douleur typique), l'ECG (sus-dÃ©calage de ST persistant) et la troponine. La prise en charge implique une revascularisation en urgence par angioplastie primaire dans les 90 minutes suivant le premier contact mÃ©dical.",
+    "explication": "Le SCA ST+ est une urgence absolue définie par une occlusion coronaire aiguë complète. Le diagnostic repose sur la clinique (douleur typique), l'ECG (sus-décalage de ST persistant) et la troponine. La prise en charge implique une revascularisation en urgence par angioplastie primaire dans les 90 minutes suivant le premier contact médical.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2023 ACS"
     ],
     "constantes": {
@@ -54,7 +54,7 @@
         "PA": "155/90 mmHg",
         "SpO2": "97%",
         "FR": "18/min",
-        "Temperature": "37.2Â°C"
+        "Temperature": "37.2°C"
       }
     }
   },
@@ -67,25 +67,25 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 62 ans, hypertendu mal Ã©quilibrÃ©, sans autre antÃ©cÃ©dent. Se prÃ©sente pour douleur thoracique d'emblÃ©e maximale, dÃ©chirante, irradiant vers le dos et entre les omoplates, depuis 1 heure.",
+        "texte": "Homme de 62 ans, hypertendu mal équilibré, sans autre antécédent. Se présente pour douleur thoracique d'emblée maximale, déchirante, irradiant vers le dos et entre les omoplates, depuis 1 heure.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "La douleur migre progressivement vers le bas du dos et l'abdomen. Pas de traumatisme rÃ©cent. Pas d'antÃ©cÃ©dent de syndrome de Marfan ni de bicuspidie aortique connue.",
+        "texte": "La douleur migre progressivement vers le bas du dos et l'abdomen. Pas de traumatisme récent. Pas d'antécédent de syndrome de Marfan ni de bicuspidie aortique connue.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Souffle diastolique aortique apparu rÃ©cemment. Pouls fÃ©moral gauche aboli. Pas de dÃ©ficit neurologique focal.",
+        "texte": "Souffle diastolique aortique apparu récemment. Pouls fémoral gauche aboli. Pas de déficit neurologique focal.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "paraclinique",
-        "texte": "ECG : pas de sus-dÃ©calage ST. Radiographie thoracique : Ã©largissement mÃ©diastinal > 8 cm, effacement du bouton aortique. D-dimÃ¨res : 4 600 ng/mL. Troponine Ic : 0,08 Âµg/L (lÃ©gÃ¨rement Ã©levÃ©e).",
+        "texte": "ECG : pas de sus-décalage ST. Radiographie thoracique : élargissement médiastinal > 8 cm, effacement du bouton aortique. D-dimères : 4 600 ng/mL. Troponine Ic : 0,08 µg/L (légèrement élevée).",
         "image": null
       },
       {
@@ -97,13 +97,13 @@
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "Angio-TDM thoraco-abdomino-pelvien : flap intimal visible depuis la racine aortique jusqu'Ã  l'aorte abdominale, avec faux chenal circulant. HÃ©mopÃ©ricarde de petite abondance. Pas d'extension aux coronaires.",
+        "texte": "Angio-TDM thoraco-abdomino-pelvien : flap intimal visible depuis la racine aortique jusqu'à l'aorte abdominale, avec faux chenal circulant. Hémopéricarde de petite abondance. Pas d'extension aux coronaires.",
         "image": null
       }
     ],
-    "explication": "La dissection aortique de type A (atteinte de l'aorte ascendante, classification de Stanford) est une urgence chirurgicale. Les Ã©lÃ©ments clÃ©s sont la douleur dÃ©chirante migrante, l'asymÃ©trie tensionnelle, l'Ã©largissement mÃ©diastinal et le flap intimal au scanner. Le pronostic est sombre sans chirurgie immÃ©diate.",
+    "explication": "La dissection aortique de type A (atteinte de l'aorte ascendante, classification de Stanford) est une urgence chirurgicale. Les éléments clés sont la douleur déchirante migrante, l'asymétrie tensionnelle, l'élargissement médiastinal et le flap intimal au scanner. Le pronostic est sombre sans chirurgie immédiate.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2024 Aortic Diseases"
     ],
     "constantes": {
@@ -126,43 +126,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Femme de 71 ans, hypertension artÃ©rielle sous amlodipine, pas d'antÃ©cÃ©dent cardiaque. Consulte pour palpitations et sensation d'irrÃ©gularitÃ© cardiaque depuis 6 heures, associÃ©es Ã  une lÃ©gÃ¨re dyspnÃ©e d'effort.",
+        "texte": "Femme de 71 ans, hypertension artérielle sous amlodipine, pas d'antécédent cardiaque. Consulte pour palpitations et sensation d'irrégularité cardiaque depuis 6 heures, associées à une légère dyspnée d'effort.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Elle rapporte un Ã©pisode similaire il y a 6 mois, rÃ©solu spontanÃ©ment. Pas de douleur thoracique, pas de malaise. Pas de fiÃ¨vre, pas de contexte infectieux rÃ©cent.",
+        "texte": "Elle rapporte un épisode similaire il y a 6 mois, résolu spontanément. Pas de douleur thoracique, pas de malaise. Pas de fièvre, pas de contexte infectieux récent.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Pouls irrÃ©gulier. Auscultation cardiaque : bruits irrÃ©guliers, pas de souffle. Pas de signe d'insuffisance cardiaque. Score CHAâDSâ-VASc Ã  4.",
+        "texte": "Pouls irrégulier. Auscultation cardiaque : bruits irréguliers, pas de souffle. Pas de signe d'insuffisance cardiaque. Score CHA₂DS₂-VASc à 4.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "ECG : absence d'ondes P identifiables, intervalles RR totalement irrÃ©guliers, activitÃ© atriale anarchique Ã  environ 350-600/min, frÃ©quence ventriculaire moyenne 118 bpm.",
+        "texte": "ECG : absence d'ondes P identifiables, intervalles RR totalement irréguliers, activité atriale anarchique à environ 350-600/min, fréquence ventriculaire moyenne 118 bpm.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "image",
-        "texte": "ECG 12 dÃ©rivations :",
+        "texte": "ECG 12 dérivations :",
         "image": "cardio-003-ecg.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "TSH : normale. NFS : pas d'anÃ©mie. CRP : 8 mg/L. ETT : OG modÃ©rÃ©ment dilatÃ©e (45 mm), FEVG conservÃ©e Ã  60%. Pas de thrombus intra-cavitaire visible.",
+        "texte": "TSH : normale. NFS : pas d'anémie. CRP : 8 mg/L. ETT : OG modérément dilatée (45 mm), FEVG conservée à 60%. Pas de thrombus intra-cavitaire visible.",
         "image": null
       }
     ],
-    "explication": "La fibrillation atriale est le trouble du rythme soutenu le plus frÃ©quent. Le diagnostic est ECG-graphique. La prise en charge intÃ¨gre le contrÃ´le de frÃ©quence ou du rythme, la prÃ©vention thromboembolique par anticoagulants (score CHAâDSâ-VASc â¥ 2 chez la femme) et la recherche de facteurs dÃ©clenchants.",
+    "explication": "La fibrillation atriale est le trouble du rythme soutenu le plus fréquent. Le diagnostic est ECG-graphique. La prise en charge intègre le contrôle de fréquence ou du rythme, la prévention thromboembolique par anticoagulants (score CHA₂DS₂-VASc ≥ 2 chez la femme) et la recherche de facteurs déclenchants.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2020 AF"
     ],
     "constantes": {
@@ -172,7 +172,7 @@
         "PA": "148/88 mmHg",
         "SpO2": "97%",
         "FR": "16/min",
-        "Temperature": "37.0Â°C"
+        "Temperature": "37.0°C"
       }
     }
   },
@@ -185,43 +185,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 48 ans, suivi pour un cancer bronchique non Ã  petites cellules sous chimiothÃ©rapie. Consulte pour dyspnÃ©e progressive d'aggravation rapide depuis 48 heures et malaise gÃ©nÃ©ral.",
+        "texte": "Homme de 48 ans, suivi pour un cancer bronchique non à petites cellules sous chimiothérapie. Consulte pour dyspnée progressive d'aggravation rapide depuis 48 heures et malaise général.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Il rapporte une toux sÃ¨che et une position antÃ©flÃ©chie soulagant partiellement la dyspnÃ©e. Pas de douleur thoracique franche. Pas de fiÃ¨vre. Dernier bilan d'imagerie il y a 3 semaines sans Ã©panchement pÃ©ricardique.",
+        "texte": "Il rapporte une toux sèche et une position antéfléchie soulagant partiellement la dyspnée. Pas de douleur thoracique franche. Pas de fièvre. Dernier bilan d'imagerie il y a 3 semaines sans épanchement péricardique.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Turgescence jugulaire bilatÃ©rale. Bruits du cÅur assourdis. Pas d'ÅdÃ¨me des membres infÃ©rieurs. HÃ©patomÃ©galie douloureuse.",
+        "texte": "Turgescence jugulaire bilatérale. Bruits du cœur assourdis. Pas d'œdème des membres inférieurs. Hépatomégalie douloureuse.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "paraclinique",
-        "texte": "ECG : tachycardie sinusale, microvoltage gÃ©nÃ©ralisÃ©, alternance Ã©lectrique (alternance de l'axe du QRS entre deux battements). Radiographie thoracique : cardiomÃ©galie en carafe, poumons clairs.",
+        "texte": "ECG : tachycardie sinusale, microvoltage généralisé, alternance électrique (alternance de l'axe du QRS entre deux battements). Radiographie thoracique : cardiomégalie en carafe, poumons clairs.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "image",
-        "texte": "Ãchocardiographie transthoracique en urgence :",
+        "texte": "Échocardiographie transthoracique en urgence :",
         "image": "cardio-004-echo.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "ETT : Ã©panchement pÃ©ricardique circonfÃ©rentiel abondant (> 20 mm), collapsus diastolique du ventricule droit et de l'oreillette droite. Variation respiratoire > 25% des flux mitraux et tricuspides.",
+        "texte": "ETT : épanchement péricardique circonférentiel abondant (> 20 mm), collapsus diastolique du ventricule droit et de l'oreillette droite. Variation respiratoire > 25% des flux mitraux et tricuspides.",
         "image": null
       }
     ],
-    "explication": "La tamponnade est une compression cardiaque par Ã©panchement pÃ©ricardique sous pression, constituant une urgence hÃ©modynamique. La triade de Beck (hypotension, turgescence jugulaire, bruits du cÅur assourdis) est Ã©vocatrice. Le diagnostic est confirmÃ© Ã  l'ETT. Le traitement est la pÃ©ricardocentÃ¨se en urgence.",
+    "explication": "La tamponnade est une compression cardiaque par épanchement péricardique sous pression, constituant une urgence hémodynamique. La triade de Beck (hypotension, turgescence jugulaire, bruits du cœur assourdis) est évocatrice. Le diagnostic est confirmé à l'ETT. Le traitement est la péricardocentèse en urgence.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2015 Pericardial Diseases"
     ],
     "constantes": {
@@ -239,30 +239,30 @@
     "id": "cardio-005",
     "specialite": "cardiologie",
     "difficulte": 1,
-    "diagnostic": "Insuffisance cardiaque aiguÃ«",
+    "diagnostic": "Insuffisance cardiaque aiguë",
     "indices": [
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Femme de 78 ans, insuffisance cardiaque chronique Ã  FEVG altÃ©rÃ©e connue (FEVG 35%), sous furosÃ©mide, Ã©nalapril, bisoprolol. AmenÃ©e par le SAMU pour dyspnÃ©e brutale au repos avec orthopnÃ©e.",
+        "texte": "Femme de 78 ans, insuffisance cardiaque chronique à FEVG altérée connue (FEVG 35%), sous furosémide, énalapril, bisoprolol. Amenée par le SAMU pour dyspnée brutale au repos avec orthopnée.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Elle rapporte avoir arrÃªtÃ© le furosÃ©mide depuis 5 jours et avoir consommÃ© des repas salÃ©s. Prise de poids de 4 kg en une semaine. Pas de douleur thoracique ni de fiÃ¨vre.",
+        "texte": "Elle rapporte avoir arrêté le furosémide depuis 5 jours et avoir consommé des repas salés. Prise de poids de 4 kg en une semaine. Pas de douleur thoracique ni de fièvre.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "CrÃ©pitants bilatÃ©raux jusqu'aux sommets. Galop B3 Ã  l'auscultation. Turgescence jugulaire. ÅdÃ¨mes des membres infÃ©rieurs prenant le godet jusqu'aux genoux.",
+        "texte": "Crépitants bilatéraux jusqu'aux sommets. Galop B3 à l'auscultation. Turgescence jugulaire. Œdèmes des membres inférieurs prenant le godet jusqu'aux genoux.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "paraclinique",
-        "texte": "BNP : 1 850 pg/mL (N < 100). Troponine Ic : 0,04 Âµg/L. CrÃ©atinine : 112 Âµmol/L (stable). GazomÃ©trie artÃ©rielle : PaOâ 58 mmHg, PaCOâ 38 mmHg, pH 7,42.",
+        "texte": "BNP : 1 850 pg/mL (N < 100). Troponine Ic : 0,04 µg/L. Créatinine : 112 µmol/L (stable). Gazométrie artérielle : PaO₂ 58 mmHg, PaCO₂ 38 mmHg, pH 7,42.",
         "image": null
       },
       {
@@ -274,13 +274,13 @@
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "Radio thoracique : cardiomÃ©galie, opacitÃ©s alvÃ©olaires bilatÃ©rales Ã  prÃ©dominance hilaire en ailes de papillon, lignes B de Kerley, Ã©panchement pleural bilatÃ©ral de faible abondance.",
+        "texte": "Radio thoracique : cardiomégalie, opacités alvéolaires bilatérales à prédominance hilaire en ailes de papillon, lignes B de Kerley, épanchement pleural bilatéral de faible abondance.",
         "image": null
       }
     ],
-    "explication": "La dÃ©compensation d'insuffisance cardiaque est la premiÃ¨re cause d'hospitalisation aprÃ¨s 65 ans en France. Le diagnostic repose sur la clinique (dyspnÃ©e, crÃ©pitants, galop), le BNP Ã©levÃ© et la radio thoracique. La recherche du facteur dÃ©clenchant (ici arrÃªt du diurÃ©tique et excÃ¨s sodÃ©) est systÃ©matique.",
+    "explication": "La décompensation d'insuffisance cardiaque est la première cause d'hospitalisation après 65 ans en France. Le diagnostic repose sur la clinique (dyspnée, crépitants, galop), le BNP élevé et la radio thoracique. La recherche du facteur déclenchant (ici arrêt du diurétique et excès sodé) est systématique.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2021 Heart Failure"
     ],
     "constantes": {
@@ -290,7 +290,7 @@
         "FC": "108 bpm",
         "PA": "165/95 mmHg",
         "FR": "32/min",
-        "Temperature": "37.1Â°C"
+        "Temperature": "37.1°C"
       }
     }
   },
@@ -303,43 +303,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 34 ans, utilisateur de drogues intraveineuses, sans suivi mÃ©dical. Consulte pour fiÃ¨vre persistante Ã  39,5Â°C depuis 3 semaines, asthÃ©nie profonde et arthralgies.",
+        "texte": "Homme de 34 ans, utilisateur de drogues intraveineuses, sans suivi médical. Consulte pour fièvre persistante à 39,5°C depuis 3 semaines, asthénie profonde et arthralgies.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Il rapporte des frissons nocturnes, une perte de poids de 6 kg en un mois et des douleurs lombaires d'intensitÃ© croissante. Pas d'antÃ©cÃ©dent cardiaque connu. Dernier bilan VIH nÃ©gatif il y a 2 ans.",
+        "texte": "Il rapporte des frissons nocturnes, une perte de poids de 6 kg en un mois et des douleurs lombaires d'intensité croissante. Pas d'antécédent cardiaque connu. Dernier bilan VIH négatif il y a 2 ans.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Souffle d'insuffisance tricuspide apparu rÃ©cemment (3/6 en parasternal gauche). SplÃ©nomÃ©galie modÃ©rÃ©e. Faux panaris d'Osler au niveau des pulpes digitales. Placards de Janeway aux paumes. HÃ©morragies sous-unguÃ©ales en flammÃ¨che.",
+        "texte": "Souffle d'insuffisance tricuspide apparu récemment (3/6 en parasternal gauche). Splénomégalie modérée. Faux panaris d'Osler au niveau des pulpes digitales. Placards de Janeway aux paumes. Hémorragies sous-unguéales en flammèche.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "paraclinique",
-        "texte": "NFS : hyperleucocytose Ã  18 G/L, CRP 185 mg/L, VS 110 mm/h. HÃ©mocultures : 3/3 positives Ã  Staphylococcus aureus mÃ©ticilline-sensible. CrÃ©atinine : 145 Âµmol/L. ProtÃ©inurie : 1,2 g/24h.",
+        "texte": "NFS : hyperleucocytose à 18 G/L, CRP 185 mg/L, VS 110 mm/h. Hémocultures : 3/3 positives à Staphylococcus aureus méticilline-sensible. Créatinine : 145 µmol/L. Protéinurie : 1,2 g/24h.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "image",
-        "texte": "Ãchocardiographie transthoracique et transoesophagienne :",
+        "texte": "Échocardiographie transthoracique et transoesophagienne :",
         "image": "cardio-006-echo.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "ETO : vÃ©gÃ©tation de 18 mm sur le feuillet antÃ©rieur de la valve tricuspide, avec insuffisance tricuspide sÃ©vÃ¨re. TDM thoracique : multiples emboles septiques pulmonaires bilatÃ©raux. Fond d'Åil : taches de Roth.",
+        "texte": "ETO : végétation de 18 mm sur le feuillet antérieur de la valve tricuspide, avec insuffisance tricuspide sévère. TDM thoracique : multiples emboles septiques pulmonaires bilatéraux. Fond d'œil : taches de Roth.",
         "image": null
       }
     ],
-    "explication": "L'endocardite infectieuse du cÅur droit chez le toxicomane IV est classiquement due Ã  S. aureus sur valve tricuspide native. Les critÃ¨res de Duke modifiÃ©s permettent le diagnostic. Les signes pÃ©riphÃ©riques (Osler, Janeway, Roth) sont inconstants mais pathognomoniques. La prise en charge est mÃ©dico-chirurgicale.",
+    "explication": "L'endocardite infectieuse du cœur droit chez le toxicomane IV est classiquement due à S. aureus sur valve tricuspide native. Les critères de Duke modifiés permettent le diagnostic. Les signes périphériques (Osler, Janeway, Roth) sont inconstants mais pathognomoniques. La prise en charge est médico-chirurgicale.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2023 Endocarditis"
     ],
     "constantes": {
@@ -349,7 +349,7 @@
         "PA": "110/70 mmHg",
         "SpO2": "96%",
         "FR": "20/min",
-        "Temperature": "39.5Â°C"
+        "Temperature": "39.5°C"
       }
     }
   },
@@ -357,48 +357,48 @@
     "id": "cardio-007",
     "specialite": "cardiologie",
     "difficulte": 2,
-    "diagnostic": "PÃ©ricardite aiguÃ«",
+    "diagnostic": "Péricardite aiguë",
     "indices": [
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 26 ans, sans antÃ©cÃ©dent, sportif. Consulte pour douleur thoracique antÃ©rieure augmentant Ã  l'inspiration et en dÃ©cubitus dorsal, diminuant en position penchÃ©e en avant, depuis 48 heures. Syndrome grippal la semaine prÃ©cÃ©dente.",
+        "texte": "Homme de 26 ans, sans antécédent, sportif. Consulte pour douleur thoracique antérieure augmentant à l'inspiration et en décubitus dorsal, diminuant en position penchée en avant, depuis 48 heures. Syndrome grippal la semaine précédente.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Pas d'irradiation dans le bras gauche. Pas de dyspnÃ©e de repos. Pas de malaise ni palpitations. ApyrÃ©tique au moment de la consultation. Pas de contexte auto-immun, pas de voyage rÃ©cent.",
+        "texte": "Pas d'irradiation dans le bras gauche. Pas de dyspnée de repos. Pas de malaise ni palpitations. Apyrétique au moment de la consultation. Pas de contexte auto-immun, pas de voyage récent.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Frottement pÃ©ricardique mÃ©sosystolique et mÃ©sodiastolique fugace Ã  l'auscultation en position assise penchÃ©e en avant. Pas de signe de tamponnade.",
+        "texte": "Frottement péricardique mésosystolique et mésodiastolique fugace à l'auscultation en position assise penchée en avant. Pas de signe de tamponnade.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "ECG : sus-dÃ©calage diffus du segment ST concave vers le haut (en selle) dans toutes les dÃ©rivations sauf aVR et V1, sous-dÃ©calage du segment PR. Pas de miroir.",
+        "texte": "ECG : sus-décalage diffus du segment ST concave vers le haut (en selle) dans toutes les dérivations sauf aVR et V1, sous-décalage du segment PR. Pas de miroir.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "image",
-        "texte": "ECG 12 dÃ©rivations :",
+        "texte": "ECG 12 dérivations :",
         "image": "cardio-007-ecg.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "CRP : 78 mg/L. Troponine Ic : 0,12 Âµg/L (discrÃ¨tement Ã©levÃ©e â myopÃ©ricardite ?). ETT : Ã©panchement pÃ©ricardique de faible abondance, FEVG normale Ã  65%. SÃ©rologie virale : pas d'indication systÃ©matique.",
+        "texte": "CRP : 78 mg/L. Troponine Ic : 0,12 µg/L (discrètement élevée — myopéricardite ?). ETT : épanchement péricardique de faible abondance, FEVG normale à 65%. Sérologie virale : pas d'indication systématique.",
         "image": null
       }
     ],
-    "explication": "La pÃ©ricardite aiguÃ« est le plus souvent virale (post-syndrome grippal). Le diagnostic repose sur â¥ 2 critÃ¨res parmi : douleur thoracique typique, frottement pÃ©ricardique, sus-dÃ©calage ST diffus en selle, Ã©panchement pÃ©ricardique nouveau. Le traitement associe AINS et colchicine pendant 3 mois pour prÃ©venir les rÃ©cidives.",
+    "explication": "La péricardite aiguë est le plus souvent virale (post-syndrome grippal). Le diagnostic repose sur ≥ 2 critères parmi : douleur thoracique typique, frottement péricardique, sus-décalage ST diffus en selle, épanchement péricardique nouveau. Le traitement associe AINS et colchicine pendant 3 mois pour prévenir les récidives.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2015 Pericardial Diseases"
     ],
     "constantes": {
@@ -408,7 +408,7 @@
         "PA": "122/74 mmHg",
         "SpO2": "99%",
         "FR": "16/min",
-        "Temperature": "37.0Â°C"
+        "Temperature": "37.0°C"
       }
     }
   },
@@ -421,43 +421,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 65 ans, antÃ©cÃ©dent d'infarctus du myocarde antÃ©rieur il y a 4 ans (FEVG rÃ©siduelle 30%). AmenÃ© par le SAMU pour malaise avec palpitations brutales et quasi-syncope.",
+        "texte": "Homme de 65 ans, antécédent d'infarctus du myocarde antérieur il y a 4 ans (FEVG résiduelle 30%). Amené par le SAMU pour malaise avec palpitations brutales et quasi-syncope.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "L'Ã©pisode a durÃ© environ 5 minutes avant l'arrivÃ©e du SAMU. Actuellement, il se plaint toujours de palpitations et de lÃ©gÃ¨re dyspnÃ©e. Traitement habituel : bisoprolol, Ã©nalapril, furosÃ©mide, aspirine.",
+        "texte": "L'épisode a duré environ 5 minutes avant l'arrivée du SAMU. Actuellement, il se plaint toujours de palpitations et de légère dyspnée. Traitement habituel : bisoprolol, énalapril, furosémide, aspirine.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Patient conscient, lÃ©gÃ¨rement obnubilÃ©. Pouls rÃ©gulier rapide. Auscultation cardiaque : B1B2 rÃ©guliers, pas de souffle audible. CrÃ©pitants aux bases pulmonaires.",
+        "texte": "Patient conscient, légèrement obnubilé. Pouls régulier rapide. Auscultation cardiaque : B1B2 réguliers, pas de souffle audible. Crépitants aux bases pulmonaires.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "ECG : tachycardie rÃ©guliÃ¨re Ã  complexes larges (QRS > 120 ms) Ã  188/min, dissociation auriculo-ventriculaire visible, captures et fusions. Axe dÃ©viÃ© Ã  gauche.",
+        "texte": "ECG : tachycardie régulière à complexes larges (QRS > 120 ms) à 188/min, dissociation auriculo-ventriculaire visible, captures et fusions. Axe dévié à gauche.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "image",
-        "texte": "ECG 12 dÃ©rivations :",
+        "texte": "ECG 12 dérivations :",
         "image": "cardio-008-ecg.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "Troponine Ic : 0,22 Âµg/L. KaliÃ©mie : 3,1 mmol/L (hypokaliÃ©mie). CrÃ©atinine : 108 Âµmol/L. ETT urgente post-cardioversion : FEVG 28%, sÃ©quelle d'IDM antÃ©rieur, pas de thrombus intraventriculaire.",
+        "texte": "Troponine Ic : 0,22 µg/L. Kaliémie : 3,1 mmol/L (hypokaliémie). Créatinine : 108 µmol/L. ETT urgente post-cardioversion : FEVG 28%, séquelle d'IDM antérieur, pas de thrombus intraventriculaire.",
         "image": null
       }
     ],
-    "explication": "La tachycardie ventriculaire soutenue est une urgence rythmologique, survenant ici sur cardiopathie ischÃ©mique cicatricielle (contexte le plus frÃ©quent). La dissociation AV, les captures et fusions sont pathognomoniques. Le traitement immÃ©diat dÃ©pend de la tolÃ©rance hÃ©modynamique : cardioversion Ã©lectrique si instable, amiodarone IV si stable.",
+    "explication": "La tachycardie ventriculaire soutenue est une urgence rythmologique, survenant ici sur cardiopathie ischémique cicatricielle (contexte le plus fréquent). La dissociation AV, les captures et fusions sont pathognomoniques. Le traitement immédiat dépend de la tolérance hémodynamique : cardioversion électrique si instable, amiodarone IV si stable.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2022 Ventricular Arrhythmias"
     ],
     "constantes": {
@@ -467,7 +467,7 @@
         "FC": "188 bpm",
         "SpO2": "94%",
         "FR": "22/min",
-        "Temperature": "37.3Â°C"
+        "Temperature": "37.3°C"
       }
     }
   },
@@ -475,48 +475,48 @@
     "id": "cardio-009",
     "specialite": "cardiologie",
     "difficulte": 3,
-    "diagnostic": "RÃ©trÃ©cissement aortique serrÃ©",
+    "diagnostic": "Rétrécissement aortique serré",
     "indices": [
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Homme de 79 ans, hypertendu. AdressÃ© par son mÃ©decin traitant pour dyspnÃ©e d'effort progressive (stade III de la NYHA) depuis 4 mois, associÃ©e Ã  des Ã©pisodes de lipothymies Ã  l'effort.",
+        "texte": "Homme de 79 ans, hypertendu. Adressé par son médecin traitant pour dyspnée d'effort progressive (stade III de la NYHA) depuis 4 mois, associée à des épisodes de lipothymies à l'effort.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Il rapporte un Ã©pisode de douleur angineuse Ã  l'effort la semaine prÃ©cÃ©dente. Ces symptÃ´mes ont progressivement altÃ©rÃ© sa qualitÃ© de vie. Pas d'antÃ©cÃ©dent cardiaque. Pas de fiÃ¨vre.",
+        "texte": "Il rapporte un épisode de douleur angineuse à l'effort la semaine précédente. Ces symptômes ont progressivement altéré sa qualité de vie. Pas d'antécédent cardiaque. Pas de fièvre.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Souffle systolique Ã©jectionnel 4/6, rude, mÃ©sosystolique, irradiant dans les carotides, maximum au foyer aortique (2Ã¨me espace intercostal droit). Abolition du B2 aortique.",
+        "texte": "Souffle systolique éjectionnel 4/6, rude, mésosystolique, irradiant dans les carotides, maximum au foyer aortique (2ème espace intercostal droit). Abolition du B2 aortique.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "paraclinique",
-        "texte": "ECG : hypertrophie ventriculaire gauche (indice de Sokolow > 35 mm), trouble de la repolarisation en V5-V6. Radiographie thoracique : cardiomÃ©galie modÃ©rÃ©e, calcifications aortiques visibles.",
+        "texte": "ECG : hypertrophie ventriculaire gauche (indice de Sokolow > 35 mm), trouble de la repolarisation en V5-V6. Radiographie thoracique : cardiomégalie modérée, calcifications aortiques visibles.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "image",
-        "texte": "Ãchocardiographie Doppler transthoracique :",
+        "texte": "Échocardiographie Doppler transthoracique :",
         "image": "cardio-009-echo.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "ETT Doppler : surface valvulaire aortique 0,7 cmÂ² (N > 2 cmÂ²), gradient moyen transvalvulaire 52 mmHg, Vmax 4,8 m/s. Hypertrophie concentrique du VG, FEVG conservÃ©e Ã  62%.",
+        "texte": "ETT Doppler : surface valvulaire aortique 0,7 cm² (N > 2 cm²), gradient moyen transvalvulaire 52 mmHg, Vmax 4,8 m/s. Hypertrophie concentrique du VG, FEVG conservée à 62%.",
         "image": null
       }
     ],
-    "explication": "Le rÃ©trÃ©cissement aortique calcifiÃ© du sujet Ã¢gÃ© est la valvulopathie la plus frÃ©quente en Europe. La triade symptomatique (angor, syncope d'effort, insuffisance cardiaque) signe un pronostic rÃ©servÃ© sans traitement. Le remplacement valvulaire aortique (chirurgical ou TAVI selon le profil de risque) est indiquÃ© dÃ¨s l'apparition des symptÃ´mes.",
+    "explication": "Le rétrécissement aortique calcifié du sujet âgé est la valvulopathie la plus fréquente en Europe. La triade symptomatique (angor, syncope d'effort, insuffisance cardiaque) signe un pronostic réservé sans traitement. Le remplacement valvulaire aortique (chirurgical ou TAVI selon le profil de risque) est indiqué dès l'apparition des symptômes.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2021 Valvular Heart Disease"
     ],
     "constantes": {
@@ -526,7 +526,7 @@
         "PA": "145/85 mmHg",
         "SpO2": "97%",
         "FR": "16/min",
-        "Temperature": "36.8Â°C"
+        "Temperature": "36.8°C"
       }
     }
   },
@@ -539,43 +539,43 @@
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Femme de 82 ans, sans antÃ©cÃ©dent cardiaque connu, traitÃ©e pour hypothyroÃ¯die et HTA. AmenÃ©e par les pompiers pour malaise avec perte de connaissance brÃ¨ve (< 1 minute) au lever le matin, avec retour spontanÃ© Ã  la conscience.",
+        "texte": "Femme de 82 ans, sans antécédent cardiaque connu, traitée pour hypothyroïdie et HTA. Amenée par les pompiers pour malaise avec perte de connaissance brève (< 1 minute) au lever le matin, avec retour spontané à la conscience.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "anamnese",
-        "texte": "Elle dÃ©crit des Ã©pisodes de lipothymie et de grande fatigue depuis 3 semaines. Pas de prodromes vÃ©gÃ©tatifs avant la syncope. Son traitement comprend du vÃ©rapamil rÃ©cemment introduit par son cardiologue pour une hypertension.",
+        "texte": "Elle décrit des épisodes de lipothymie et de grande fatigue depuis 3 semaines. Pas de prodromes végétatifs avant la syncope. Son traitement comprend du vérapamil récemment introduit par son cardiologue pour une hypertension.",
         "image": null
       },
       {
         "ordre": 3,
         "type": "clinique",
-        "texte": "Patient consciente, lÃ©gÃ¨rement confuse. Pouls lent rÃ©gulier. Auscultation : bruits du cÅur lents, Ã©clat du B1 variable. Pas de signe d'insuffisance cardiaque.",
+        "texte": "Patient consciente, légèrement confuse. Pouls lent régulier. Auscultation : bruits du cœur lents, éclat du B1 variable. Pas de signe d'insuffisance cardiaque.",
         "image": null
       },
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "ECG : rythme auriculaire rÃ©gulier Ã  88/min (ondes P visibles), rythme ventriculaire rÃ©gulier Ã  38/min (QRS fins), aucune relation entre les ondes P et les complexes QRS. Dissociation auriculo-ventriculaire complÃ¨te.",
+        "texte": "ECG : rythme auriculaire régulier à 88/min (ondes P visibles), rythme ventriculaire régulier à 38/min (QRS fins), aucune relation entre les ondes P et les complexes QRS. Dissociation auriculo-ventriculaire complète.",
         "image": null
       },
       {
         "ordre": 4,
         "type": "image",
-        "texte": "ECG 12 dÃ©rivations :",
+        "texte": "ECG 12 dérivations :",
         "image": "cardio-010-ecg.jpg"
       },
       {
         "ordre": 6,
         "type": "paraclinique",
-        "texte": "TSH : normale. KaliÃ©mie : 4,1 mmol/L. DigoxinÃ©mie non dosÃ©e (pas de traitement). VÃ©rapamil arrÃªtÃ©. CrÃ©atinine : 95 Âµmol/L. Holter ECG 24h aprÃ¨s rÃ©cupÃ©ration : BAV 1er degrÃ© rÃ©siduel, rythme sinusal.",
+        "texte": "TSH : normale. Kaliémie : 4,1 mmol/L. Digoxinémie non dosée (pas de traitement). Vérapamil arrêté. Créatinine : 95 µmol/L. Holter ECG 24h après récupération : BAV 1er degré résiduel, rythme sinusal.",
         "image": null
       }
     ],
-    "explication": "Le bloc auriculo-ventriculaire complet (BAV III) est caractÃ©risÃ© par une dissociation AV totale avec rythme d'Ã©chappement jonctionnel ou ventriculaire. Ici, probablement favorisÃ© par le vÃ©rapamil (inhibiteur calcique bradycardisant). La prise en charge inclut l'arrÃªt du mÃ©dicament en cause et la mise en place d'un stimulateur cardiaque si le BAV est intrinsÃ¨que et persistant.",
+    "explication": "Le bloc auriculo-ventriculaire complet (BAV III) est caractérisé par une dissociation AV totale avec rythme d'échappement jonctionnel ou ventriculaire. Ici, probablement favorisé par le vérapamil (inhibiteur calcique bradycardisant). La prise en charge inclut l'arrêt du médicament en cause et la mise en place d'un stimulateur cardiaque si le BAV est intrinsèque et persistant.",
     "references": [
-      "CollÃ¨ge de Cardiologie et MÃ©decine Vasculaire",
+      "Collège de Cardiologie et Médecine Vasculaire",
       "ESC Guidelines 2021 Cardiac Pacing"
     ],
     "constantes": {
@@ -585,11 +585,11 @@
         "FC": "38 bpm",
         "SpO2": "96%",
         "FR": "16/min",
-        "Temperature": "36.9Â°C"
+        "Temperature": "36.9°C"
       }
     }
   },
-  {
+    {
     "id": "gyn-011",
     "specialite": "gynecologie",
     "difficulte": 2,
@@ -601,20 +601,20 @@
         "PA": "123/87 mmHg",
         "SpO2": "98%",
         "FR": "18 /min",
-        "Temperature": "37.1Â°C"
+        "Temperature": "37.1°C"
       }
     },
     "indices": [
       {
         "ordre": 1,
         "type": "anamnese",
-        "texte": "Femme de 29 ans, sans antÃ©cÃ©dent, douleurs abdominales diffuses dâaggravation progressive depuis 72 heures, associÃ©es Ã  des nausÃ©es et une sensation de ballonnement important.",
+        "texte": "Femme de 29 ans, sans antécédent, douleurs abdominales diffuses d’aggravation progressive depuis 72 heures, associées à des nausées et une sensation de ballonnement important.",
         "image": null
       },
       {
         "ordre": 2,
         "type": "clinique",
-        "texte": "Algique, abdomen distendu, sensible de faÃ§on diffuse. DiscrÃ¨te dyspnÃ©e dâeffort rÃ©cente.",
+        "texte": "Algique, abdomen distendu, sensible de façon diffuse. Discrète dyspnée d’effort récente.",
         "image": null
       },
       {
@@ -632,13 +632,13 @@
       {
         "ordre": 5,
         "type": "paraclinique",
-        "texte": "HÃ©matocrite Ã  53%, Leucocytes 17 G/l, CrÃ©atinine Ã  61 Âµmol/L, DFG 89 ml/min, Na 135 mmol/l, K+ 4,3 mmol/l. Î²-hCG nÃ©gative.",
+        "texte": "Hématocrite à 53%, Leucocytes 17 G/l, Créatinine à 61 µmol/L, DFG 89 ml/min, Na 135 mmol/l, K+ 4,3 mmol/l. β-hCG négative.",
         "image": null
       },
       {
         "ordre": 6,
         "type": "anamnese",
-        "texte": "Notion de ponction ovocytaire dans le cadre dâun parcours de PMA il y 5 jours.",
+        "texte": "Notion de ponction ovocytaire dans le cadre d’un parcours de PMA il y 5 jours.",
         "image": null
       }
     ],
