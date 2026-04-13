@@ -145,9 +145,9 @@ body { font-family:'Inter', system-ui, sans-serif; background:var(--bg-primary);
 .countdown-label { font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px; }
 .countdown-time { font-size:24px; font-weight:700; letter-spacing:0.06em; font-variant-numeric:tabular-nums; }
 .result-actions { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
-.btn-partager { font-size:13px; font-weight:500; padding:8px 18px; border-radius:var(--radius-md); border:2px solid var(--border-mid); background:var(--bg-primary); color:var(--text-primary); cursor:pointer; font-family:inherit; }
+.btn-partager { font-size:13px; font-weight:500; padding:8px 18px; border-radius:var(--radius-md); border:2px solid var(--border-mid); background:var(--bg-primary); color:var(--text-primary); cursor:pointer; font-family:inherit; transition: background-color 0.25s cubic-bezier(0.4, 0, 1, 1), opacity 0.25s cubic-bezier(0.4, 0, 1, 1); }
 .btn-partager:hover { background:var(--bg-tertiary); }
-.btn-archives-link { font-size:13px; padding:8px 18px; border-radius:var(--radius-md); border:2px solid var(--border-subtle); background:transparent; color:var(--text-secondary); cursor:pointer; font-family:inherit; text-decoration:none; display:inline-flex; align-items:center; }
+.btn-archives-link { font-size:13px; padding:8px 18px; border-radius:var(--radius-md); border:2px solid var(--border-subtle); background:transparent; color:var(--text-secondary); cursor:pointer; font-family:inherit; text-decoration:none; display:inline-flex; align-items:center; transition: background-color 0.25s cubic-bezier(0.4, 0, 1, 1), opacity 0.25s cubic-bezier(0.4, 0, 1, 1); }
 .btn-archives-link:hover { background:var(--bg-tertiary); }
 .share-confirm { font-size:12px; color:var(--text-tertiary); margin-top:8px; }
 .deja-joue { text-align:center; padding:2rem 1.5rem; background:var(--bg-secondary); border-radius:var(--radius-lg); border:2px solid var(--border-subtle); }
