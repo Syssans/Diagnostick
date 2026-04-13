@@ -3,7 +3,7 @@
   --bg-primary: #000000; --bg-secondary: #fff3; --bg-tertiary: #646464;
   --text-primary: #f5f4ee; --text-secondary: #a8a69a; --text-tertiary: #949494;
   --border-subtle: rgba(222,220,209,0.12); --border-mid: rgba(222,220,209,0.25); --border-strong: rgba(222,220,209,0.4);
-  --radius-sm:6px; --radius-md:8px; --radius-lg:12px; --radius-full:9999px;
+  --radius-sm:6px; --radius-md:1000px; --radius-lg:15px; --radius-full:9999px;
   --tag-anamnese-bg:rgba(37,62,95,0.7); --tag-anamnese-text:#80aadd;
   --tag-clinique-bg:rgba(27,70,20,0.7); --tag-clinique-text:#7ab948;
   --tag-paraclinique-bg:rgba(72,58,15,0.7); --tag-paraclinique-text:#d1a041;
@@ -55,6 +55,8 @@ body { font-family:'Inter', system-ui, sans-serif; background:var(--bg-primary);
 .stat { text-align:center; }
 .stat-value { font-size:18px; font-weight:600; }
 .stat-label { font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.05em; }
+.btn-page { font-size:13px; font-weight:500; padding:8px 18px; border-radius:var(--radius-md); border:2px solid var(--border-mid); background:var(--bg-primary); color:var(--text-primary); cursor:pointer; font-family:inherit; }
+.btn-page:hover { background:var(--bg-tertiary); }
 
 /* ── FOOTER ───────────────────────────────────────────────────────────────── */
 .footer { text-align:center; margin-top:2.5rem; padding-top:1.25rem; border-top:0.5px solid var(--border-subtle); }
