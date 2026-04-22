@@ -81,6 +81,7 @@ body { font-family:'DM Sans', system-ui, sans-serif; background:var(--bg-primary
 /* ── INDICES ──────────────────────────────────────────────────────────────── */
 .indices { display:flex; flex-direction:column; gap:15px; margin-bottom:1rem; }
 .indice-card { background:var(--bg-secondary); border:0px solid var(--border-subtle); border-radius:var(--radius-lg); padding:0.9rem 1.1rem; animation:fadeSlide 0.2s ease; }
+.indice-card.no-anim { animation:none; }
 @keyframes fadeSlide { from{opacity:0;transform: perspective(400px) rotateX(90deg);} to{opacity:1;transform: perspective(400px) rotateX(0deg);} }
 .indice-header { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
 .indice-tag { font-size:10px; font-weight:600; padding:2px 8px; border-radius:var(--radius-full); text-transform:uppercase; letter-spacing:0.04em; }
