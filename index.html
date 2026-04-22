@@ -169,9 +169,9 @@
       CAS = transformerCas(getCasDuJour(data, config).cas);
       var session = getSession();
       if (session && session.date === getTodayKey()) { afficherDejaJoue(session); return; }
-      renderTries(); renderIndices(); renderConstantes();
+      renderTries(); renderIndices(false); renderConstantes();
     }).catch(function() {
-      renderTries(); renderIndices(); renderConstantes();
+      renderTries(); renderIndices(false); renderConstantes();
     });
   }
 
@@ -240,43 +240,60 @@
     return ({anamnese:{cls:'tag-anamnese',label:'Anamnèse'},clinique:{cls:'tag-clinique',label:'Clinique'},paraclinique:{cls:'tag-paraclinique',label:'Paraclinique'},image:{cls:'tag-image',label:'Imagerie'}})[type] || {cls:'tag-anamnese',label:type};
   }
 
-  function renderIndices() {
-    if (!CAS) return;
-    var container = el('indices-container'); container.innerHTML = '';
+  function creerCarteIndice(ind, i, animer) {
+  var tag = getTag(ind.type);
+  var card = document.createElement('div');
+  card.className = animer ? 'indice-card' : 'indice-card no-anim';
+  card.dataset.indice = i;
+  var header = document.createElement('div'); header.className = 'indice-header';
+  var tagEl = document.createElement('span'); tagEl.className = 'indice-tag ' + tag.cls; tagEl.textContent = tag.label;
+  var numEl = document.createElement('span'); numEl.className = 'indice-num'; numEl.textContent = 'Indice ' + (i+1);
+  header.appendChild(tagEl); header.appendChild(numEl);
+  var textEl = document.createElement('div'); textEl.className = 'indice-text'; textEl.textContent = ind.text;
+  card.appendChild(header); card.appendChild(textEl);
+  if (ind.hasImage) {
+    var imgDiv = document.createElement('div'); imgDiv.className = 'indice-image';
+    if (ind.imageSrc) {
+      var img = document.createElement('img'); img.src = './images/' + ind.imageSrc; img.alt = 'Imagerie';
+      var hint = document.createElement('span'); hint.className = 'indice-image-hint'; hint.textContent = 'Appuyer pour agrandir';
+      imgDiv.appendChild(img); imgDiv.appendChild(hint);
+      imgDiv.addEventListener('click', function() { ouvrirLightbox('./images/' + ind.imageSrc); });
+    } else {
+      var sp = document.createElement('span'); sp.className = 'indice-image-placeholder'; sp.textContent = 'Image à venir';
+      imgDiv.appendChild(sp); imgDiv.style.cursor = 'default';
+    }
+    card.appendChild(imgDiv);
+  }
+  return card;
+}
+
+function creerCarteVerrouille(i) {
+  var locked = document.createElement('div'); locked.className = 'indice-locked-card';
+  locked.dataset.indice = i;
+  locked.innerHTML = '<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg>';
+  var lockTxt = document.createElement('span'); lockTxt.className = 'indice-locked-text'; lockTxt.textContent = 'Indice ' + (i+1);
+  locked.appendChild(lockTxt);
+  return locked;
+}
+
+function renderIndices(animerDernier) {
+  if (!CAS) return;
+  var container = el('indices-container');
+  if (container.children.length === 0) {
     CAS.indices.forEach(function(ind, i) {
-      if (i < indicesVisibles) {
-        var tag = getTag(ind.type);
-        var card = document.createElement('div'); card.className = 'indice-card';
-        var header = document.createElement('div'); header.className = 'indice-header';
-        var tagEl = document.createElement('span'); tagEl.className = 'indice-tag ' + tag.cls; tagEl.textContent = tag.label;
-        var numEl = document.createElement('span'); numEl.className = 'indice-num'; numEl.textContent = 'Indice ' + (i+1);
-        header.appendChild(tagEl); header.appendChild(numEl);
-        var textEl = document.createElement('div'); textEl.className = 'indice-text'; textEl.textContent = ind.text;
-        card.appendChild(header); card.appendChild(textEl);
-        if (ind.hasImage) {
-          var imgDiv = document.createElement('div'); imgDiv.className = 'indice-image';
-          if (ind.imageSrc) {
-            var img = document.createElement('img'); img.src = './images/' + ind.imageSrc; img.alt = 'Imagerie';
-            var hint = document.createElement('span'); hint.className = 'indice-image-hint'; hint.textContent = 'Appuyer pour agrandir';
-            imgDiv.appendChild(img); imgDiv.appendChild(hint);
-            imgDiv.addEventListener('click', function() { ouvrirLightbox('./images/' + ind.imageSrc); });
-          } else {
-            var sp = document.createElement('span'); sp.className = 'indice-image-placeholder'; sp.textContent = 'Image à venir';
-            imgDiv.appendChild(sp);
-            imgDiv.style.cursor = 'default';
-          }
-          card.appendChild(imgDiv);
-        }
-        container.appendChild(card);
-      } else {
-        var locked = document.createElement('div'); locked.className = 'indice-locked-card';
-        locked.innerHTML = '<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg>';
-        var lockTxt = document.createElement('span'); lockTxt.className = 'indice-locked-text'; lockTxt.textContent = 'Indice ' + (i+1);
-        locked.appendChild(lockTxt); container.appendChild(locked);
-      }
+      container.appendChild(i < indicesVisibles ? creerCarteIndice(ind, i, false) : creerCarteVerrouille(i));
     });
     mettreAJourConstantes();
+    return;
   }
+  CAS.indices.forEach(function(ind, i) {
+    var existing = container.querySelector('[data-indice="' + i + '"]');
+    if (i < indicesVisibles && existing && existing.classList.contains('indice-locked-card')) {
+      container.replaceChild(creerCarteIndice(ind, i, animerDernier && i === indicesVisibles - 1), existing);
+    }
+  });
+  mettreAJourConstantes();
+}
 
   function normalise(str) { return str.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""); }
 
@@ -337,7 +354,7 @@
     el('input-zone').style.display = 'none';
     var dots = document.querySelectorAll('.try-dot');
     if (succes && dots[essaiActuel]) { dots[essaiActuel].classList.remove('current'); dots[essaiActuel].classList.add('correct'); }
-    indicesVisibles = CAS.indices.length; renderIndices(); mettreAJourConstantes();
+    indicesVisibles = CAS.indices.length; renderIndices(false); mettreAJourConstantes();
     var zone = el('result-zone');
     var banner = document.createElement('div'); banner.className = 'result-banner';
     var h2 = document.createElement('h2'); h2.textContent = succes ? 'Bravo !' : 'Raté pour aujourd\'hui';
@@ -371,7 +388,7 @@
     el('diag-input').value = ''; essaiActuel++;
     if (essaiActuel >= MAX_ESSAIS) { terminer(false); return; }
     if (indicesVisibles < CAS.indices.length) indicesVisibles++;
-    renderTries(); renderIndices();
+    renderTries(); renderIndices(true);
   }
 
   function passer() {
@@ -380,7 +397,7 @@
     el('diag-input').value = ''; el('dropdown').style.display = 'none'; essaiActuel++;
     if (essaiActuel >= MAX_ESSAIS) { terminer(false); return; }
     if (indicesVisibles < CAS.indices.length) indicesVisibles++;
-    renderTries(); renderIndices();
+    renderTries(); renderIndices(true);
   }
 
   el('date-label').textContent = getDateLabel();
