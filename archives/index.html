@@ -212,7 +212,7 @@
     el('modal-constantes-panel').classList.remove('open');
     el('modal-constantes-chevron').classList.remove('open');
     document.body.style.overflow = 'hidden';
-    renderModalTries(); renderModalIndices(); mettreAJourConstantesModal();
+    renderModalTries(); renderModalIndices(false); mettreAJourConstantesModal();
   }
 
   function fermerModal() { el('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }
@@ -233,41 +233,60 @@
     }
   }
 
-  function renderModalIndices() {
-    var container = el('modal-indices'); container.innerHTML = '';
-    modalState.cas.indices.forEach(function(ind, i) {
-      if (i < modalState.indices) {
-        var tag = getTag(ind.type);
-        var card = document.createElement('div'); card.className = 'indice-card';
-        var header = document.createElement('div'); header.className = 'indice-header';
-        var tagEl = document.createElement('span'); tagEl.className = 'indice-tag ' + tag.cls; tagEl.textContent = tag.label;
-        var numEl = document.createElement('span'); numEl.className = 'indice-num'; numEl.textContent = 'Indice ' + (i+1);
-        header.appendChild(tagEl); header.appendChild(numEl);
-        var textEl = document.createElement('div'); textEl.className = 'indice-text'; textEl.textContent = ind.text;
-        card.appendChild(header); card.appendChild(textEl);
-        if (ind.hasImage) {
-          var imgDiv = document.createElement('div'); imgDiv.className = 'indice-image';
-          if (ind.imageSrc) {
-            var img = document.createElement('img'); img.src = './images/' + ind.imageSrc; img.alt = 'Imagerie';
-            var hint = document.createElement('span'); hint.className = 'indice-image-hint'; hint.textContent = 'Appuyer pour agrandir';
-            imgDiv.appendChild(img); imgDiv.appendChild(hint);
-            imgDiv.addEventListener('click', function(src){ return function(){ ouvrirLightbox('./images/' + src); }; }(ind.imageSrc));
-          } else {
-            var sp = document.createElement('span'); sp.className = 'indice-image-placeholder'; sp.textContent = 'Image à venir';
-            imgDiv.appendChild(sp); imgDiv.style.cursor = 'default';
-          }
-          card.appendChild(imgDiv);
-        }
-        container.appendChild(card);
-      } else {
-        var locked = document.createElement('div'); locked.className = 'indice-locked-card';
-        locked.innerHTML = '<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg>';
-        var lockTxt = document.createElement('span'); lockTxt.className = 'indice-locked-text'; lockTxt.textContent = 'Indice ' + (i+1);
-        locked.appendChild(lockTxt); container.appendChild(locked);
-      }
+function creerCarteIndice(ind, i, animer) {
+  var tag = getTag(ind.type);
+  var card = document.createElement('div');
+  card.className = animer ? 'indice-card' : 'indice-card no-anim';
+  card.dataset.indice = i;
+  var header = document.createElement('div'); header.className = 'indice-header';
+  var tagEl = document.createElement('span'); tagEl.className = 'indice-tag ' + tag.cls; tagEl.textContent = tag.label;
+  var numEl = document.createElement('span'); numEl.className = 'indice-num'; numEl.textContent = 'Indice ' + (i+1);
+  header.appendChild(tagEl); header.appendChild(numEl);
+  var textEl = document.createElement('div'); textEl.className = 'indice-text'; textEl.textContent = ind.text;
+  card.appendChild(header); card.appendChild(textEl);
+  if (ind.hasImage) {
+    var imgDiv = document.createElement('div'); imgDiv.className = 'indice-image';
+    if (ind.imageSrc) {
+      var img = document.createElement('img'); img.src = './images/' + ind.imageSrc; img.alt = 'Imagerie';
+      var hint = document.createElement('span'); hint.className = 'indice-image-hint'; hint.textContent = 'Appuyer pour agrandir';
+      imgDiv.appendChild(img); imgDiv.appendChild(hint);
+      imgDiv.addEventListener('click', function() { ouvrirLightbox('./images/' + ind.imageSrc); });
+    } else {
+      var sp = document.createElement('span'); sp.className = 'indice-image-placeholder'; sp.textContent = 'Image à venir';
+      imgDiv.appendChild(sp); imgDiv.style.cursor = 'default';
+    }
+    card.appendChild(imgDiv);
+  }
+  return card;
+}
+
+function creerCarteVerrouille(i) {
+  var locked = document.createElement('div'); locked.className = 'indice-locked-card';
+  locked.dataset.indice = i;
+  locked.innerHTML = '<svg class="lock-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg>';
+  var lockTxt = document.createElement('span'); lockTxt.className = 'indice-locked-text'; lockTxt.textContent = 'Indice ' + (i+1);
+  locked.appendChild(lockTxt);
+  return locked;
+}
+
+function renderModalIndices(animerDernier) {
+  if (!CAS) return;
+  var container = el('indices-container');
+  if (container.children.length === 0) {
+    CAS.indices.forEach(function(ind, i) {
+      container.appendChild(i < indicesVisibles ? creerCarteIndice(ind, i, false) : creerCarteVerrouille(i));
     });
     mettreAJourConstantesModal();
+    return;
   }
+  CAS.indices.forEach(function(ind, i) {
+    var existing = container.querySelector('[data-indice="' + i + '"]');
+    if (i < indicesVisibles && existing && existing.classList.contains('indice-locked-card')) {
+      container.replaceChild(creerCarteIndice(ind, i, animerDernier && i === indicesVisibles - 1), existing);
+    }
+  });
+  mettreAJourConstantesModal();
+}
 
   function mettreAJourConstantesModal() {
     if (!modalState.cas.constantes) { el('modal-constantes-zone').style.display='none'; return; }
@@ -322,7 +341,7 @@
     var dots = el('modal-tries').querySelectorAll('.try-dot');
     if (succes && dots[modalState.essais]) { dots[modalState.essais].classList.remove('current'); dots[modalState.essais].classList.add('correct'); }
     modalState.indices = modalState.cas.indices.length;
-    renderModalIndices();
+    renderModalIndices(false);
     var emoji = buildEmoji(modalState.essais, succes);
     el('modal-result').innerHTML = '<div class="result-banner"><h2>' + (succes?'Bravo !':'Raté') + '</h2><div class="result-emoji">' + emoji + '</div><p>' + (succes ? 'Trouvé en ' + (modalState.essais+1) + ' essai' + (modalState.essais>0?'s':'') + ' — <strong>' + modalState.cas.diagnostic + '</strong>' : 'Le diagnostic était : <strong>' + modalState.cas.diagnostic + '</strong>') + '</p></div>';
   }
@@ -339,7 +358,7 @@
     el('modal-diag-input').value = ''; modalState.essais++;
     if (modalState.essais >= 6) { terminerModal(false); return; }
     if (modalState.indices < modalState.cas.indices.length) modalState.indices++;
-    renderModalTries(); renderModalIndices();
+    renderModalTries(); renderModalIndices(true);
   }
 
   function passerModal() {
@@ -348,7 +367,7 @@
     el('modal-diag-input').value = ''; el('modal-dropdown').style.display = 'none'; modalState.essais++;
     if (modalState.essais >= 6) { terminerModal(false); return; }
     if (modalState.indices < modalState.cas.indices.length) modalState.indices++;
-    renderModalTries(); renderModalIndices();
+    renderModalTries(); renderModalIndices(true);
   }
 
   el('modal-btn-valider').addEventListener('click', validerModal);
